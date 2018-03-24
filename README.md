@@ -17,6 +17,7 @@ The Iris data set is a set of data containing information about iris flowers. Th
 1. The petal lenght in cms
 1. The petal width in cms
 1. The class (Iris Setosa, Iris Verticolour or Iris Virginica)
+
 The data set is a multivariate data set as it involves data with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edjar Anderson while working on a study of the physical differences between 3 related species of iris flower.
 ### Fisher and Anderson
 ### The Principles of LDA (very basic laymans terms)
