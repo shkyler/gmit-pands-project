@@ -22,5 +22,5 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 ### Discussion of the results
 
 ## References
-1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (__https://learnonline.gmit.ie/mod/url/view.php?id=199458__)
+1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (_https://learnonline.gmit.ie/mod/url/view.php?id=199458_)
 
