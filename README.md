@@ -10,7 +10,14 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 1. Write a summary of your investigations.
 1. Include supporting tables and graphics as you deem necessary.
 ## The Iris Data Set Background
-### The Data Set
+### The Iris Data Set [2]
+The Iris data set is a set of data containing information about iris flowers. The data contains 150 diferent data points. For each data point there are 5 pieces of information. These are [3]:
+1. The sepal lenght in cms
+1. The sepal width in cms
+1. The petal lenght in cms
+1. The petal width in cms
+1. The class (Iris Setosa, Iris Verticolour or Iris Virginica)
+The data set is a multivariate data set as it involves data with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edjar Anderson while working on a study of the physical differences between 3 related species of iris flower.
 ### Fisher and Anderson
 ### The Principles of LDA (very basic laymans terms)
 ### Popularity of the Iris set in Teaching and Study
@@ -23,4 +30,7 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 
 ## References
 1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (_https://learnonline.gmit.ie/mod/url/view.php?id=199458_)
+1. [2] Wikipedia. Iris flower data set (_https://en.wikipedia.org/wiki/Iris_flower_data_set_)
+1. [3] UC Irvine Machine Learning Repository. Iris plants database. )(_http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names_)
+1. [4] Wikipedia. Multivariate statistics (_https://en.wikipedia.org/wiki/Multivariate_statistics_)
 
