@@ -22,11 +22,11 @@ The Iris data set is a set of data containing information about iris flowers. Th
 The class represents the species of the iris flower and in the set there are 50 points for each of the 3 iris species. The data set is a multivariate data set as it involves data with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edgar Anderson while working on a study of the physical differences between 3 related species of iris flower. Fisher used the data set as an example of _linear discriminate analysis_[9], and it is now commonly used as a typical test case in many statistical classification techniques (see section 2.3).
 
 ### 2.2 Edgar Anderson and Ronald Fisher
-                         ![Anderson](/img/Anderson.jpg)
+![Anderson](/img/Anderson.jpg)
 
 Edgar Anderson was an American botanist who lived in the early part of the 20th century[5]. In the 1920s, while working as assistant professor of botany at Washington University in St. Louis his main area of research centered around the development of techniques to quantify geographical  difference in the iris versicolor. In 1929 he obtained a fellowship to study at the John Innes Horticultural Institute in Britain, where he worked with Ronald Fisher. Anderson collected the iris data set himself and in fact "_two of the three species were collected in the Gaspé Peninsula, all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus_"[6].
 
-                          ![Fisher](/img/Fisher.jpg)
+![Fisher](/img/Fisher.jpg)
 
 Ronald Fisher was a contemporary of Anderson. In addition to being the greatest statistician ever, he invented experimental design and was a principal founder of population genetics [7]. 
 In 1925, he released his book "_Statistical Methods for Research Workers_" which soon revolutionise both statistics and biology. In fact, he has been described as "_a genius who almost single-handedly created the foundations for modern statistical science_" [8].
