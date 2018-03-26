@@ -40,7 +40,18 @@ Applying this description to the iris data set - the groups would be the 3 iris 
 
 Another method of classifying or grouping data points is _cluster analysis_. This method involves creating a scatter plot of data and then looking to see do any of the data points cluster together which may indicate membership of a particular group. With cluster analysis the groups are unknown at the start and would have to be determined by the analysis. The iris data set is generally not used in cluster analysis as there are only 2 groupings seen in the analysis. Futhermore it is not possible to seperate Iris Virginia from Iris Versicolour without having the species data in advance[2].
 
-### 2.4 Popularity of the Iris set in Teaching and Study
+### 2.4 Popularity of the Iris set in teaching and study
+While carrying out research into the iris data set it quickly became apparent that this data set is ubiquitous across the internet. Most of the sites were linked to education and training. Other uses of the data were by data analysis software companies who use the data set in their promotional material. The reasons for it's popularity are best summed up as follows [10]:
+
+1. _Containing 150 observations, it is small but not trivial._
+
+1. _The task it poses of discriminating between three species of Iris from measurements of their petals and sepals is simple but challenging._
+
+1. _The data are real data, but apparently of good quality. In principle and in practice, test datasets could be synthetic and that might be necessary or useful to make a point. Nevertheless, few people object to real data._
+
+1. _The data were used by the celebrated British statistician Ronald Fisher in 1936. (Later he was knighted and became Sir Ronald.) At least some teachers like the idea of a dataset with a link to someone so well known within the field. The data were originally published by the statistically-minded botanist Edgar S. Anderson, but that earlier origin does not diminish the association._
+
+1. _Using a few famous datasets is one of the traditions we hand down, such as telling each new generation that Student worked for Guinness. Using a few test datasets affords some continuty in now new test methods are assessed._
 
 ## 3. My Code
 ### 3.1 What it does
@@ -58,4 +69,5 @@ Another method of classifying or grouping data points is _cluster analysis_. Thi
 1. [7] Famous Scietists. Ronald Fisher. (_https://www.famousscientists.org/ronald-fisher_)
 1. [8] Anders Hald (1998). (_A History of Mathematical Statistics._)
 1. [9] Linear Discriminate Analysis (LDA).(_http://people.revoledu.com/kardi/tutorial/LDA/LDA.htm_l)
+1. [10] Stack Exchange. "What aspects of the “Iris” data set make it so successful as an example/teaching/test data set" (_https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching_)
 
