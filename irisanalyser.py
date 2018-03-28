@@ -25,6 +25,9 @@ def mean(x):                                     # mean(x) takes a value x and r
   average = sum(x)/count()                       # the functions that are already declared can be used to calculate the average 
   return average
 
+# def max(x)
+# def min(x)
+# def stddev(x)
 print(sum(0))
 print(sum(1))
 print(sum(2))
@@ -34,6 +37,7 @@ print(mean(0))
 print(mean(1))
 print(mean(2))
 print(mean(3))
+
 
 
 print(count())    
