@@ -6,11 +6,25 @@
 
 # Section 1 - Functions - In this section of the project, the functions used to analyse the data are defined
 
-def count():                                   # count is a function that will count the number of rows in the data file
-  with open("data/iris.csv", "r") as myfile:   # this statement opens the iris data set as an object called myfile
-    counter = 0                                # this initialises a variable that will used to store the values of the count
-    for line in myfile:                        # this loop run through the rows of the file one a a time
-      counter = counter + 1                    # for each pass through the loop the counter is incremented by one
-    return counter                             # the counter is returned at the end with the number of rows in the data set
+def count():                                     # count is a function that will count the number of rows in the data file
+  with open("data/iris.csv", "r") as myfile:     # this statement opens the iris data set as an object called myfile
+    counter = 0                                  # this initialises a variable that will used to store the values of the count
+    for line in myfile:                          # this loop run through the rows of the file one a a time
+      counter = counter + 1                      # for each pass through the loop the counter is incremented by one
+    return counter                               # the counter is returned at the end with the number of rows in the data set
+
+def sum(x):                                      # sum is a function that takes an argument of 'x' and then returns the sum of the values in column 'x'
+  with open("data/iris.csv", "r") as myfile:       # this statement opens the iris data set as an object called myfile                  
+    sums = 0                                     # this initialises a variable that will used to store the values of the sum
+    for line in myfile:                          # this loop run through the rows of the file one a a time
+      rows = line.split(',')[0:5]                # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      sums = sums + float(rows[x])               # on each pass through the loop sums is incremented with the float value of the line for the column specified by 'x'
+    return sums                                  # the final value of the sum is returned with the summation of all values in the specified column
+
+
+print(sum(0))
+print(sum(1))
+print(sum(2))
+print(sum(3))
 
 print(count())    
