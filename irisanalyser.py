@@ -34,21 +34,16 @@ def max(x):                                       # max(x) is a function that ta
         maximum = float(rows[x])                  # if it is greater than 'maximum' then 'maximum' will be set to that value
     return maximum                                # the final value of 'maximum' is returned
 
-# def min(x)
+def min(x):                                       # min(x) is a function that takes an argument of 'x' and then returns the minimum value in column 'x'
+  with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile                           
+    minimum = 10                                  # this initialises a variable that will used to store the maximum value in column 'x' (value can't be 0 to start otherwise it will not change in the for loop)
+    for line in myfile:                           # this loop run through the rows of the file one at a time
+      rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if float(rows[x]) < minimum:                # on each pass through the loop the value is checked to see if it is less than 'minimum'
+        minimum = float(rows[x])                  # if it is less than 'minimum' then 'minimum' will be set to that value
+    return minimum                                # the final value of 'minimum' is returned
 # def stddev(x)
-print(sum(0))
-print(sum(1))
-print(sum(2))
-print(sum(3))
-
-print(mean(0))
-print(mean(1))
-print(mean(2))
-print(mean(3))
-
-print(max(0))
-print(max(1))
-print(max(2))
-print(max(3))
-
-print(count())    
+print(min(0))
+print(min(1))
+print(min(2))
+print(min(3))
