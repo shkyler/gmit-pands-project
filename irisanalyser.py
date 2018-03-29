@@ -43,6 +43,9 @@ def min(x):                                       # min(x) is a function that ta
         minimum = float(rows[x])                  # if it is less than 'minimum' then 'minimum' will be set to that value
     return minimum                                # the final value of 'minimum' is returned
 # def stddev(x)
+# Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data
+# Section 3 - Graphics - In this section of the project, some graphics will created
+# Section 4 - User Interface - In this section of the project a user interface will be created
 print(min(0))
 print(min(1))
 print(min(2))
