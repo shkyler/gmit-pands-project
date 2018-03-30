@@ -53,19 +53,27 @@ def stddev(x):                                    # stddev(x) is a function that
     return sig                                    # this calculation for sig is returned
 
 # Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data
-summary = [['Statistic', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width'],
-           ['Sum', round(sum(0),2),round(sum(1),2), round(sum(2),2), round(sum(3),2)],
-           ['Max', round(max(0),2), round(max(1),2), round(max(2),2), round(max(3),2)],
-           ['Min', round(min(0),2), round(min(1),2), round(min(2),2), round(min(3),2)],
-           ['Mean', round(mean(0),2), round(mean(1),2), round(mean(2),2), round(mean(3),2)],
-           ['Std Dev', round(stddev(0),2), round(stddev(1),2), round(stddev(2),2), round(stddev(3),2)]
+summary = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width'],
+           ['Sum', str(round(sum(0),2)), str(round(sum(1),2)), str(round(sum(2),2)), str(round(sum(3),2))],
+           ['Max', str(round(max(0),2)), str(round(max(1),2)), str(round(max(2),2)), str(round(max(3),2))],
+           ['Min', str(round(min(0),2)), str(round(min(1),2)), str(round(min(2),2)), str(round(min(3),2))],
+           ['Mean', str(round(mean(0),2)), str(round(mean(1),2)), str(round(mean(2),2)), str(round(mean(3),2))],
+           ['Std Dev', str(round(stddev(0),2)), str(round(stddev(1),2)), str(round(stddev(2),2)), str(round(stddev(3),2))]
           ]
+
+colwidth = 18  
+for row in summary:
+  print("".join(word.ljust(colwidth) for word in row))
+
+    
+#import numpy as np
+#print(np.matrix(summary))
 
 # Section 3 - Graphics - In this section of the project, some graphics will created
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
-print(round(stddev(0),2))
-print(round(stddev(1),2))
-print(round(stddev(2),2))
-print(round(stddev(3),2))
-print(summary)
+#print(round(stddev(0),2))
+#print(round(stddev(1),2))
+#print(round(stddev(2),2))
+#print(round(stddev(3),2))
+#print(summary)
