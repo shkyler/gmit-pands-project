@@ -52,7 +52,7 @@ def stddev(x):                                    # stddev(x) is a function that
     sig = (devsq/count())**0.5                    # sig is the standard deviation calulated by getting the square root of the average of 'devsq'
     return sig                                    # this calculation for sig is returned
 
-# Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data
+# Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data, all the data is formatted to 2 decimla places and converted to strings to improve printing
 summary = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width'],
            ['Sum', str(round(sum(0),2)), str(round(sum(1),2)), str(round(sum(2),2)), str(round(sum(3),2))],
            ['Max', str(round(max(0),2)), str(round(max(1),2)), str(round(max(2),2)), str(round(max(3),2))],
@@ -61,10 +61,11 @@ summary = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','P
            ['Std Dev', str(round(stddev(0),2)), str(round(stddev(1),2)), str(round(stddev(2),2)), str(round(stddev(3),2))]
           ]
 
-colwidth = 18  
-for row in summary:
-  print("".join(word.ljust(colwidth) for word in row))
-
+def output(data):
+  colwidth = 18                                     # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python
+  for row in data:
+    print("".join(cell.ljust(colwidth) for cell in row))
+output(summary)
     
 #import numpy as np
 #print(np.matrix(summary))
