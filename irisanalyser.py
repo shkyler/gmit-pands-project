@@ -43,14 +43,14 @@ def min(x):                                       # min(x) is a function that ta
         minimum = float(rows[x])                  # if it is less than 'minimum' then 'minimum' will be set to that value
     return minimum                                # the final value of 'minimum' is returned
 
-def stddev(x):
-  with open("data/iris.csv", "r") as myfile:
-    devsq = 0
+def stddev(x):                                    # stddev(x) is a function that takes an argument of 'x' and then returns the standard deviation of the data in column 'x'
+  with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile
+    devsq = 0                                     # this initialises a variable that will used to store the "deviations from the mean"
     for line in myfile:                           # this loop run through the rows of the file one at a time
-      rows = line.split(',')[0:5]
-      devsq = devsq + (mean(x) - float(rows[x]))**2
-    sig = (devsq/count())**0.5
-    return sig
+      rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      devsq = devsq + (mean(x) - float(rows[x]))**2 # on each pass through the loop devsq is incremented by the value of the 'deviation from the mean' squared
+    sig = (devsq/count())**0.5                    # sig is the standard deviation calulated by getting the square root of the average of 'devsq'
+    return sig                                    # this calculation for sig is returned
 
 # Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data
 summary = [['Statistic', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width'],
