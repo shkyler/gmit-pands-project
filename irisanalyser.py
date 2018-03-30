@@ -42,11 +42,30 @@ def min(x):                                       # min(x) is a function that ta
       if float(rows[x]) < minimum:                # on each pass through the loop the value is checked to see if it is less than 'minimum'
         minimum = float(rows[x])                  # if it is less than 'minimum' then 'minimum' will be set to that value
     return minimum                                # the final value of 'minimum' is returned
-# def stddev(x)
+
+def stddev(x):
+  with open("data/iris.csv", "r") as myfile:
+    devsq = 0
+    for line in myfile:                           # this loop run through the rows of the file one at a time
+      rows = line.split(',')[0:5]
+      devsq = devsq + (mean(x) - float(rows[x]))**2
+    sig = (devsq/count())**0.5
+    return sig
+
 # Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data
+summary = [['Statistic', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width'],
+           ['Sum', round(sum(0),2),round(sum(1),2), round(sum(2),2), round(sum(3),2)],
+           ['Max', round(max(0),2), round(max(1),2), round(max(2),2), round(max(3),2)],
+           ['Min', round(min(0),2), round(min(1),2), round(min(2),2), round(min(3),2)],
+           ['Mean', round(mean(0),2), round(mean(1),2), round(mean(2),2), round(mean(3),2)],
+           ['Std Dev', round(stddev(0),2), round(stddev(1),2), round(stddev(2),2), round(stddev(3),2)]
+          ]
+
 # Section 3 - Graphics - In this section of the project, some graphics will created
+
 # Section 4 - User Interface - In this section of the project a user interface will be created
-print(min(0))
-print(min(1))
-print(min(2))
-print(min(3))
+print(round(stddev(0),2))
+print(round(stddev(1),2))
+print(round(stddev(2),2))
+print(round(stddev(3),2))
+print(summary)
