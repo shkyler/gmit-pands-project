@@ -60,11 +60,12 @@ summary = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','P
            ['Mean', str(round(mean(0),2)), str(round(mean(1),2)), str(round(mean(2),2)), str(round(mean(3),2))],
            ['Std Dev', str(round(stddev(0),2)), str(round(stddev(1),2)), str(round(stddev(2),2)), str(round(stddev(3),2))]
           ]
+                                                                                                                                                                                                                
+def output(data):                                  # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python 
+  colwidth = 18                                    # 'output' takes a list as an argument 
+  for row in data:                                 # it loops through each row in the list   
+    print("".join(cell.ljust(colwidth) for cell in row)) # it prints each item in the row formatted to the column width specified
 
-def output(data):
-  colwidth = 18                                     # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python
-  for row in data:
-    print("".join(cell.ljust(colwidth) for cell in row))
 output(summary)
     
 #import numpy as np
