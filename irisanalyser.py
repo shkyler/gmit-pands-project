@@ -34,14 +34,19 @@ def mean(x,type):                                         # mean(x,type) takes a
   average = sum(x,type)/count(x,type)                     # the functions that are already declared can be used to calculate the average 
   return average
 
-#def max(x):                                       # max(x) is a function that takes an argument of 'x' and then returns the maximum value in column 'x'
- # with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile                   
-  #  maximum = 0                                   # this initialises a variable that will used to store the maximum value in column 'x'
-   # for line in myfile:                           # this loop run through the rows of the file one at a time
-    #  rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-     # if float(rows[x]) > maximum:                # on each pass through the loop the value is checked to see if it is greater than 'maximum'
-      #  maximum = float(rows[x])                  # if it is greater than 'maximum' then 'maximum' will be set to that value
-   # return maximum                                # the final value of 'maximum' is returned
+def max(x,type):                                        # max(x) is a function that takes an argument of 'x' and then returns the maximum value in column 'x' for the specified species
+  with open("data/iris.csv", "r") as myfile:            # this statement opens the iris data set as an object called myfile                   
+    maximum = 0                                         # this initialises a variable that will used to store the maximum value in column 'x' as the program loops
+    for line in myfile:                                 # this loops run through the rows of the file one at a time
+      rows = line.split(',')[0:5]                       # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                 # if the type is set to 'all' will check the whole column
+        if float(rows[x]) > maximum:                    # on each pass through the loop the value is checked to see if it is greater than 'maximum'
+          maximum = float(rows[x])                      # if it is greater than 'maximum' then 'maximum' will be set to that value
+      else:                                             # otherwise the 'type' is checked in column 4 and look for the maximum value for the specified 'type'
+        if type in rows[4]:
+          if float(rows[x]) > maximum:
+            maximum = float(rows[x])
+    return maximum                                      # the final value of 'maximum' is returned
 
 #def min(x):                                       # min(x) is a function that takes an argument of 'x' and then returns the minimum value in column 'x'
  # with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile                           
@@ -104,3 +109,8 @@ print(round(mean(0,'setosa'),2))
 print(round(mean(0,'versicolor'),2))
 print(round(mean(0,'virginica'),2))
 print(round(mean(0,'all'),2))
+
+print(round(max(0,'setosa'),2))
+print(round(max(0,'versicolor'),2))
+print(round(max(0,'virginica'),2))
+print(round(max(0,'all'),2))
