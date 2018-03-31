@@ -39,32 +39,37 @@ def max(x,type):                                        # max(x) is a function t
     maximum = 0                                         # this initialises a variable that will used to store the maximum value in column 'x' as the program loops
     for line in myfile:                                 # this loops run through the rows of the file one at a time
       rows = line.split(',')[0:5]                       # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-      if type == 'all':                                 # if the type is set to 'all' will check the whole column
+      if type == 'all':                                 # if the type is set to 'all', it will check the whole column
         if float(rows[x]) > maximum:                    # on each pass through the loop the value is checked to see if it is greater than 'maximum'
           maximum = float(rows[x])                      # if it is greater than 'maximum' then 'maximum' will be set to that value
-      else:                                             # otherwise the 'type' is checked in column 4 and look for the maximum value for the specified 'type'
+      else:                                             # otherwise the 'type' is checked in column 4 and it will look for the maximum value for the specified 'type'
         if type in rows[4]:
           if float(rows[x]) > maximum:
             maximum = float(rows[x])
     return maximum                                      # the final value of 'maximum' is returned
 
-#def min(x):                                       # min(x) is a function that takes an argument of 'x' and then returns the minimum value in column 'x'
- # with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile                           
-  #  minimum = 10                                  # this initialises a variable that will used to store the maximum value in column 'x' (value can't be 0 to start otherwise it will not change in the for loop)
-   # for line in myfile:                           # this loop run through the rows of the file one at a time
-    #  rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-     # if float(rows[x]) < minimum:                # on each pass through the loop the value is checked to see if it is less than 'minimum'
-      #  minimum = float(rows[x])                  # if it is less than 'minimum' then 'minimum' will be set to that value
-    #return minimum                                # the final value of 'minimum' is returned
+def min(x,type):                                        # min(x) is a function that takes an argument of 'x' and then returns the minimum value in column 'x' for the specified iris species
+  with open("data/iris.csv", "r") as myfile:            # this statement opens the iris data set as an object called myfile                           
+    minimum = max(x,type)                               # this initialises a variable that will used to store the maximum value in column 'x' (value is initially set to the maximum so that the loop will find all the lower values)
+    for line in myfile:                                 # this loop run through the rows of the file one at a time
+      rows = line.split(',')[0:5]                       # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                 # if the type is set to 'all', it will check the whole column
+        if float(rows[x]) < minimum:                    # on each pass through the loop the value is checked to see if it is less than 'minimum'
+          minimum = float(rows[x])                      # if it is less than 'minimum' then 'minimum' will be set to that value
+      else:                                             # otherwise the 'type' is checked in column 4 and it will look for the minimum value for the specified 'type'
+        if type in rows[4]:
+          if float(rows[x]) < minimum:
+            minimum = float(rows[x])
+    return minimum                                      # the final value of 'minimum' is returned
 
-#def stddev(x):                                    # stddev(x) is a function that takes an argument of 'x' and then returns the standard deviation of the data in column 'x'
- # with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile
-  #  devsq = 0                                     # this initialises a variable that will used to store the "deviations from the mean"
-   # for line in myfile:                           # this loop run through the rows of the file one at a time
-    #  rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-     # devsq = devsq + (mean(x) - float(rows[x]))**2 # on each pass through the loop devsq is incremented by the value of the 'deviation from the mean' squared
-    #sig = (devsq/count(x,type))**0.5                    # sig is the standard deviation calulated by getting the square root of the average of 'devsq'
-    #return sig                                    # this calculation for sig is returned
+def stddev(x):                                    # stddev(x) is a function that takes an argument of 'x' and then returns the standard deviation of the data in column 'x'
+  with open("data/iris.csv", "r") as myfile:      # this statement opens the iris data set as an object called myfile
+    devsq = 0                                     # this initialises a variable that will used to store the "deviations from the mean"
+    for line in myfile:                           # this loop run through the rows of the file one at a time
+      rows = line.split(',')[0:5]                 # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      devsq = devsq + (mean(x) - float(rows[x]))**2 # on each pass through the loop devsq is incremented by the value of the 'deviation from the mean' squared
+    sig = (devsq/count(x,type))**0.5                    # sig is the standard deviation calulated by getting the square root of the average of 'devsq'
+    return sig                                    # this calculation for sig is returned
 
 # Section 2 - Data Summary - In this section of the project, the functions are used to summarise the data, all the data is formatted to 2 decimla places and converted to strings to improve printing
 #summary = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width (cm)'],
@@ -114,3 +119,8 @@ print(round(max(0,'setosa'),2))
 print(round(max(0,'versicolor'),2))
 print(round(max(0,'virginica'),2))
 print(round(max(0,'all'),2))
+
+print(round(min(0,'setosa'),2))
+print(round(min(0,'versicolor'),2))
+print(round(min(0,'virginica'),2))
+print(round(min(0,'all'),2))
