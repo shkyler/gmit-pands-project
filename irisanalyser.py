@@ -6,25 +6,29 @@
 
 # Section 1 - Functions - In this section of the project, the functions used to analyse the data are defined
 
-def count(x,type):                                        # count() is a function that will count the number of rows in the data file
-  with open("data/iris.csv", "r") as myfile:        # this statement opens the iris data set as an object called myfile
-    counter = 0                                  # this initialises a variable that will used to store the values of the count
-    for line in myfile:                          # this loop run through the rows of the file one at a time
-      rows = line.split(',')[0:5]
-      if type == 'all':
-        counter = counter + 1                      # for each pass through the loop the counter is incremented by one
-      else:
-        if type in rows[4]:
-          counter = counter + 1    
-    return counter                               # the counter is returned at the end with the number of rows in the data set
+def count(x,type):                                        # count(x,type) is a function that will count the number of rows in a particular data column, depending on the species of iris entered
+  with open("data/iris.csv", "r") as myfile:              # this statement opens the iris data set as an object called myfile
+    counter = 0                                           # this initialises a variable that will used to store the values of the count
+    for line in myfile:                                   # this loop runs through the rows of the file one at a time
+      rows = line.split(',')[0:5]                         # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                   # if 'all' is passed as an argument, the loop will count all rows in the column
+        counter = counter + 1                      
+      else:                                               # otherwise the 5th column in the dataset is checked for the species that has been passed
+        if type in rows[4]:                               
+          counter = counter + 1                           # this will count the number of the rows which have the entered species in them
+    return counter                                        # the counter is returned at the end with the number of rows in the data column that are for the desired variety
 
-def sum(x):                                      # sum(x) is a function that takes an argument of 'x' and then returns the sum of the values in column 'x'
-  with open("data/iris.csv", "r") as myfile:     # this statement opens the iris data set as an object called myfile                  
-    sums = 0                                     # this initialises a variable that will used to store the values of the sum
-    for line in myfile:                          # this loop run through the rows of the file one at a time
-      rows = line.split(',')[0:5]                # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-      sums = sums + float(rows[x])               # on each pass through the loop sums is incremented with the float value of the line for the column specified by 'x'
-    return sums                                  # the final value of the sum is returned with the summation of all values in the specified column
+def sum(x,type):                                        # sum(x) is a function that takes an argument of 'x' and then returns the sum of the values in column 'x' based on the secies entered as 'type'
+  with open("data/iris.csv", "r") as myfile:            # this statement opens the iris data set as an object called myfile                  
+    sums = 0                                            # this initialises a variable that will used to store the values of the sum
+    for line in myfile:                                 # this loop runs through the rows of the file one at a time
+      rows = line.split(',')[0:5]                       # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                 # if 'all' is passed as an argument, the loop will sum all values in the specified column
+       sums = sums + float(rows[x])
+      else:                                             # otherwise the 5th column in the dataset is checked for the species that has been passed
+        if type in rows[4]:                             # this will sum the values in the rows which have the entered species in them 
+          sums = sums + float(rows[x])                  # on each pass through the loop sums is incremented with the float value of the line for the column specified by 'x'
+    return sums                                          # the final value of the sum is returned with the summation of all values in the specified column, with the specified species
 
 #def mean(x):                                     # mean(x) takes a value x and returns the mean of the column x 
  # average = sum(x)/count(x,type)                       # the functions that are already declared can be used to calculate the average 
@@ -90,3 +94,8 @@ print(count(0,'all'))
 print(count(0,'setosa'))
 print(count(0,'versicolor'))
 print(count(0,'virginica'))
+
+print(round(sum(0,'setosa'),2))
+print(round(sum(0,'versicolor'),2))
+print(round(sum(0,'virginica'),2))
+print(round(sum(0,'all'),2))
