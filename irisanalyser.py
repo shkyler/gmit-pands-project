@@ -67,13 +67,25 @@ def stddev(x,type):                                           # stddev(x) is a f
     devsq = 0                                                 # this initialises a variable that will used to store the "deviations from the mean"
     for line in myfile:                                       # this loop run through the rows of the file one at a time
       rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-      if type == 'all':                                       # if the tyoe is set to 'all' the sum of devsq is calculated for the whole column 
+      if type == 'all':                                       # if the type is set to 'all' the sum of devsq is calculated for the whole column 
         devsq = devsq + (mean(x,type) - float(rows[x]))**2    # on each pass through the loop devsq is incremented by the value of the 'deviation from the mean' squared
       else:                                                   # otherwise the 'type' is checked in column 4 and it will increment devsq for the columns with the specified iris type
         if type in rows[4]:
           devsq = devsq + (mean(x,type) - float(rows[x]))**2  
     sig = (devsq/count(x,type))**0.5                          # sig is the standard deviation calulated by getting the square root of the average of 'devsq'
     return sig                                                # this calculation for sig is returned
+
+def datacolumn(x,type):                                       # datacolumn() is a fuction that takes an argument 'x' and then returns a list of the data in column 'x' for a specified iris species
+  with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile                  
+    values = []                                               # this initialises a list variable that will used to store the values of column 'x'
+    for line in myfile:                                       # this loop run through the rows of the file one at a time
+      rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                       # if the type is set to 'all' - 'values' will be appended with the values of the whole column in order
+        values.append(float(rows[x]))
+      else:                                                   # otherwise the 'type' is checked in column 4 and it will only append 'values' with the values from the specified iris type
+        if type in rows[4]:                
+          values.append(float(rows[x]))               
+    return values                                             # the final list of values is returned
 
 # Section 2 - Data Summary - In this section of the project, the functions and data structures that are used to summarise the data are defined. All the data is formatted to 2 decimal places and converted to strings to improve printing
 
@@ -109,20 +121,20 @@ summaryvirginica = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght
                     ['Std Dev', str(round(stddev(0,'virginica'),2)), str(round(stddev(1,'virginica'),2)), str(round(stddev(2,'virginica'),2)), str(round(stddev(3,'virginica'),2))]
                     ]
 
-def output(data):                                  # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python 
-  colwidth = 18                                    # 'output' takes a list as an argument 
-  print('The data summary is: ') 
-  for row in data:                                 # it loops through each row in the list   
-    print("".join(cell.ljust(colwidth) for cell in row)) # it prints each item in the row formatted to the column width specified
+def printsummary(data):                                       # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python 
+  colwidth = 18                                               # 'printsummary' takes a list as an argument  
+  for row in data:                                            # it loops through each row in the list   
+    print("".join(cell.ljust(colwidth) for cell in row))      # it prints each item in the row, left justified and formatted to the column width specified
 
-output(summaryall)
-output(summarysetosa)
-output(summaryversicolor)
-output(summaryvirginica)        
+printsummary(summaryall)
+printsummary(summarysetosa)
+printsummary(summaryversicolor)
+printsummary(summaryvirginica)     
+print(datacolumn(0,'all'))   
 #import numpy as np
 #print(np.matrix(summary))
 
-# Section 3 - Graphics - In this section of the project, some graphics will created
+# Section 3 - Graphics - In this section of the project, some graphics functions will created
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
 #print(round(stddev(0),2))
