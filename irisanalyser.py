@@ -126,15 +126,41 @@ def printsummary(data):                                       # I researched how
   for row in data:                                            # it loops through each row in the list   
     print("".join(cell.ljust(colwidth) for cell in row))      # it prints each item in the row, left justified and formatted to the column width specified
 
-printsummary(summaryall)
-printsummary(summarysetosa)
-printsummary(summaryversicolor)
-printsummary(summaryvirginica)     
-print(datacolumn(0,'all'))   
+#printsummary(summaryall)
+#printsummary(summarysetosa)
+#printsummary(summaryversicolor)
+#printsummary(summaryvirginica)      
 #import numpy as np
 #print(np.matrix(summary))
 
 # Section 3 - Graphics - In this section of the project, some graphics functions will created
+
+def scatter(x,y,type):                                                              # scatter is a function that uses matplotlib to create a scatter plot of the data, x and y are list vlaues to be plotted on the x and y axes, type is the species of iris
+  import matplotlib.pyplot as plt                                                   # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
+  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']      # this is a list of the data column names in the order they appear in the data set
+  if type == 'setosa':                                                              # if type is 'setosa' it will plot the corresponding x and y values by calling the datacolumn() function for the 'setosa' items
+    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red')
+  elif type == 'versicolor':                                                        # if type is 'versicolor' it will plot the corresponding x and y values by calling the datacolumn() function for the 'versicolor' items
+    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
+  elif type == 'virginica':                                                         # if type is 'virginica' it will plot the corresponding x and y values by calling the datacolumn() function for the 'virginica' items
+    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green')
+  elif type == 'all':                                                               # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured differently
+    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red')
+    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
+    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green')
+  elif type == 'allsame':
+    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='blue')            # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured the same (blue)
+    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
+    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='blue')  
+  plt.title(columnnames[y] + ' vs. ' + columnnames[x])                              # title will be given by looking up the 'columnnames' list
+  plt.ylim([0,10])                                                                  # both x any y axes set in the range 0 to 10
+  plt.xlim([0,10])
+  plt.xlabel(columnnames[x])                                                        # x and y axis labels given by looking up the 'columnnames' list
+  plt.ylabel(columnnames[y])
+  plt.grid(True)                                                                    # this command puts a grid on the background of the plot area
+  plt.show()                                                                        # this command shows the plot
+
+scatter(2,3,'versicolor')
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
 #print(round(stddev(0),2))
