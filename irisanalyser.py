@@ -175,9 +175,9 @@ def histogram(y, type):
     plt.hist(datacolumn(y,'virginica'), alpha = 0.5, lw = 3, color = 'g')
   elif type == 'allsame':
     plt.hist(datacolumn(y,'all'), alpha = 0.5, lw = 3, color = 'b')                 # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - all data will be coloured blue
-  plt.title('Histogram of: ' + columnnames[y] + ', ' + type)                        # title will be given by looking up the 'columnnames' list
-  plt.ylabel('Count')                                                               # y axis label given by looking up the 'columnnames' list
-  plt.xlabel(columnnames[y])                                                                                # this command puts a grid on the background of the plot area
+  plt.title('Histogram of: ' + columnnames[y] + ', ' + type)                        # title will be given by looking up the 'columnnames' list and using the specified 'type'
+  plt.ylabel('Count')                                                               # x axis label given by looking up the 'columnnames' list
+  plt.xlabel(columnnames[y])                                                        # this command shows the plot
   plt.show()
         
 histogram(0, 'setosa')  
