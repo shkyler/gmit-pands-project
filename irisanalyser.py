@@ -160,7 +160,29 @@ def scatter(x,y,type):                                                          
   plt.grid(True)                                                                    # this command puts a grid on the background of the plot area
   plt.show()                                                                        # this command shows the plot
 
-scatter(2,3,'versicolor')
+def histogram(y, type):
+  import matplotlib.pyplot as plt                                                   # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
+  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']      # this is a list of the data column names in the order they appear in the data set
+  if type == 'setosa':                                                              # if type is 'setosa' it will plot the corresponding y values by calling the datacolumn() function for the 'setosa' items
+    plt.hist(datacolumn(y,'setosa'), alpha = 0.5, lw = 3, color = 'r') 
+  elif type == 'versicolor':                                                        # if type is 'versicolor' it will plot the corresponding y values by calling the datacolumn() function for the 'versicolor' items
+    plt.hist(datacolumn(y,'versicolor'), alpha = 0.5, lw = 3, color = 'b')
+  elif type == 'virginica':                                                         # if type is 'virginica' it will plot the corresponding y values by calling the datacolumn() function for the 'virginica' items
+    plt.hist(datacolumn(y,'virginica'), alpha = 0.5, lw = 3, color = 'g')
+  elif type == 'all':                                                               # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - each set will be coloured differently
+    plt.hist(datacolumn(y,'setosa'), alpha = 0.5, lw = 3, color = 'r')
+    plt.hist(datacolumn(y,'versicolor'), alpha = 0.5, lw = 3, color = 'b')
+    plt.hist(datacolumn(y,'virginica'), alpha = 0.5, lw = 3, color = 'g')
+  elif type == 'allsame':
+    plt.hist(datacolumn(y,'all'), alpha = 0.5, lw = 3, color = 'b')                 # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - all data will be coloured blue
+  plt.title('Histogram of: ' + columnnames[y] + ', ' + type)                        # title will be given by looking up the 'columnnames' list
+  plt.ylabel('Count')                                                               # y axis label given by looking up the 'columnnames' list
+  plt.xlabel(columnnames[y])                                                                                # this command puts a grid on the background of the plot area
+  plt.show()
+        
+histogram(0, 'setosa')  
+  
+#scatter(2,3,'versicolor')
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
 #print(round(stddev(0),2))
