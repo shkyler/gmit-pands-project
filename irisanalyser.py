@@ -179,13 +179,13 @@ def histogram(y, type):
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
 
-print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
-print('*                                                                                       *')
-print('*                         Welcome to The Iris Data Set Anaylser                         *')
-print('*                                                                                       *')
-print('*                          Written by Patrick Moore, GMIT, 2018                         *')
-print('*                                                                                       *')
-print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+#print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+#print('*                                                                                       *')
+#print('*                         Welcome to The Iris Data Set Anaylser                         *')
+#print('*                                                                                       *')
+#print('*                          Written by Patrick Moore, GMIT, 2018                         *')
+#print('*                                                                                       *')
+#print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
 
 printsummary(summaryall)
 #printsummary(summarysetosa)
