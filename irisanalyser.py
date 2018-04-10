@@ -126,13 +126,6 @@ def printsummary(data):                                       # I researched how
   for row in data:                                            # it loops through each row in the list   
     print("".join(cell.ljust(colwidth) for cell in row))      # it prints each item in the row, left justified and formatted to the column width specified
 
-#printsummary(summaryall)
-#printsummary(summarysetosa)
-#printsummary(summaryversicolor)
-#printsummary(summaryvirginica)      
-#import numpy as np
-#print(np.matrix(summary))
-
 # Section 3 - Graphics - In this section of the project, some graphics functions will created
 
 def scatter(x,y,type):                                                              # scatter is a function that uses matplotlib to create a scatter plot of the data, x and y are list vlaues to be plotted on the x and y axes, type is the species of iris
@@ -180,11 +173,25 @@ def histogram(y, type):
   plt.xlabel(columnnames[y])                                                        # this command shows the plot
   plt.show()
         
-histogram(0, 'setosa')  
+#histogram(0, 'setosa')  
   
 #scatter(2,3,'versicolor')
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
+
+print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+print('*                                                                                       *')
+print('*                         Welcome to The Iris Data Set Anaylser                         *')
+print('*                                                                                       *')
+print('*                          Written by Patrick Moore, GMIT, 2018                         *')
+print('*                                                                                       *')
+print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+
+printsummary(summaryall)
+#printsummary(summarysetosa)
+#printsummary(summaryversicolor)
+#printsummary(summaryvirginica)  
+
 #print(round(stddev(0),2))
 #print(round(stddev(1),2))
 #print(round(stddev(2),2))
