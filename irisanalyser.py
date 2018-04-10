@@ -173,6 +173,40 @@ def histogram(y, type):
   plt.xlabel(columnnames[y])                                                        # this command shows the plot
   plt.show()
         
+def normdist(x,type):                                                                                                                    # for this function - I expanded on code I found here: https://stackoverflow.com/questions/10138085/python-pylab-plot-normal-distribution             
+  import matplotlib.pyplot as plt                                                                                                        # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)                               
+  import numpy as np                                                                                                                     # import numpy           
+  import matplotlib.mlab as mlab
+  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']                                                           # this is a list of the data column names in the order they appear in the data set
+  if type == 'setosa':                                                                                                                   # if type is 'setosa' we will use only 'setosa' data         
+    q = np.linspace(mean(x,'setosa') - 4*stddev(x,'setosa'), mean(x,'setosa') + 4*stddev(x,'setosa'), 100)
+    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red')
+  elif type == 'versicolor':                                                                                                             # if type is 'versicolor' we will use only 'versicolor' data
+    q = np.linspace(mean(x,'versicolor') - 4*stddev(x,'versicolor'), mean(x,'versicolor') + 4*stddev(x,'versicolor'), 100)
+    plt.plot(q,mlab.normpdf(q, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue')
+  elif type == 'virginica':  
+    q = np.linspace(mean(x,'virginica') - 4*stddev(x,'virginica'), mean(x,'virginica') + 4*stddev(x,'virginica'), 100)                   # if type is 'virginica' we will use only 'virginica' data
+    plt.plot(q,mlab.normpdf(q, mean(x,'virginica'), stddev(x,'virginica')), c='green')
+  elif type == 'all':                                                                                                                     # if type is 'all' we will use all data plotted seperately on the same axis     
+    q = np.linspace(mean(x,'setosa') - 4*stddev(x,'setosa'), mean(x,'setosa') + 4*stddev(x,'setosa'), 100)
+    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red')    
+    r = np.linspace(mean(x,'versicolor') - 4*stddev(x,'versicolor'), mean(x,'versicolor') + 4*stddev(x,'versicolor'), 100)
+    plt.plot(r,mlab.normpdf(r, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue')
+    s = np.linspace(mean(x,'virginica') - 4*stddev(x,'virginica'), mean(x,'virginica') + 4*stddev(x,'virginica'), 100)
+    plt.plot(s,mlab.normpdf(s, mean(x,'virginica'), stddev(x,'virginica')),c='green')
+  elif type == 'allsame':                                                                                                                 # if type is 'all' we will use the whole data set          
+    q = np.linspace(mean(x,'all') - 4*stddev(x,'all'), mean(x,'all') + 4*stddev(x,'all'), 100)
+    plt.plot(q,mlab.normpdf(q, mean(x,'all'), stddev(x,'all')), c='blue')          
+  plt.title('Normal Distribution Plot: ' + columnnames[x] + ', ' + type)                                                                  # title will be given by looking up the 'columnnames' list and using the specified 'type'
+  plt.ylabel('Probability')                                                                                                               # x axis label given by looking up the 'columnnames' list
+  plt.xlabel(columnnames[x]) 
+  plt.show()
+
+normdist(0,'setosa')
+normdist(0,'versicolor')
+normdist(0,'virginica')
+normdist(0,'all')
+normdist(0,'allsame')
 #histogram(0, 'setosa')  
   
 #scatter(2,3,'versicolor')
@@ -188,9 +222,9 @@ def histogram(y, type):
 #print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
 
 printsummary(summaryall)
-#printsummary(summarysetosa)
-#printsummary(summaryversicolor)
-#printsummary(summaryvirginica)  
+printsummary(summarysetosa)
+printsummary(summaryversicolor)
+printsummary(summaryvirginica)  
 
 #print(round(stddev(0),2))
 #print(round(stddev(1),2))
