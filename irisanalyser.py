@@ -202,15 +202,6 @@ def normdist(x,type):                                                           
   plt.xlabel(columnnames[x]) 
   plt.show()
 
-#normdist(0,'setosa')
-#normdist(0,'versicolor')
-#normdist(0,'virginica')
-#normdist(0,'all')
-#normdist(0,'allsame')
-#histogram(0, 'setosa')  
-  
-#scatter(2,3,'versicolor')
-
 # Section 4 - User Interface - In this section of the project a user interface will be created
 def session():
   mode = input('Would you like a data summary or a graphical summary? (data/graph): ')
@@ -324,44 +315,3 @@ if startsession == 'no':
   quit()
 elif startsession == 'yes':
   session()
-
-
-
-
-  
-
-#print(round(stddev(0),2))
-#print(round(stddev(1),2))
-#print(round(stddev(2),2))
-#print(round(stddev(3),2))
-#print(summary)
-
-#print(count(0,'all'))
-#print(count(0,'setosa'))
-#print(count(0,'versicolor'))
-#print(count(0,'virginica'))
-
-#print(round(sum(0,'setosa'),2))
-#print(round(sum(0,'versicolor'),2))
-#print(round(sum(0,'virginica'),2))
-#print(round(sum(0,'all'),2))
-
-#print(round(mean(0,'setosa'),2))
-#print(round(mean(0,'versicolor'),2))
-#print(round(mean(0,'virginica'),2))
-#print(round(mean(0,'all'),2))
-
-#print(round(max(0,'setosa'),2))
-#print(round(max(0,'versicolor'),2))
-#print(round(max(0,'virginica'),2))
-#print(round(max(0,'all'),2))
-
-#print(round(min(0,'setosa'),2))
-#print(round(min(0,'versicolor'),2))
-#print(round(min(0,'virginica'),2))
-#print(round(min(0,'all'),2))
-
-#print(round(stddev(0,'setosa'),2))
-#print(round(stddev(0,'versicolor'),2))
-#print(round(stddev(0,'virginica'),2))
-#print(round(stddev(0,'all'),2))
