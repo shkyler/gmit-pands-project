@@ -202,29 +202,133 @@ def normdist(x,type):                                                           
   plt.xlabel(columnnames[x]) 
   plt.show()
 
-normdist(0,'setosa')
-normdist(0,'versicolor')
-normdist(0,'virginica')
-normdist(0,'all')
-normdist(0,'allsame')
+#normdist(0,'setosa')
+#normdist(0,'versicolor')
+#normdist(0,'virginica')
+#normdist(0,'all')
+#normdist(0,'allsame')
 #histogram(0, 'setosa')  
   
 #scatter(2,3,'versicolor')
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
+def session():
+  mode = input('Would you like a data summary or a graphical summary? (data/graph): ')
+  while mode not in ['data', 'graph']:
+    mode = input('Please type either "data" or "graph": ')
 
-#print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
-#print('*                                                                                       *')
-#print('*                         Welcome to The Iris Data Set Anaylser                         *')
-#print('*                                                                                       *')
-#print('*                          Written by Patrick Moore, GMIT, 2018                         *')
-#print('*                                                                                       *')
-#print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+  if mode == 'data':
+    species = input('For which species would you like to see the summary? (setosa/versicolor/virginica/all): ')
+    while species not in ['setosa', 'versicolor', 'virginica', 'all']:  
+      species = input('Please type "setosa", "versicolor", "virginica", "all"')
+    if species == 'setosa':
+      print('The summary of the setosa data is:')
+      printsummary(summarysetosa)
+    elif species == 'versicolor':
+      print('The summary of the versicolor data is:')
+      printsummary(summaryversicolor)
+    elif species == 'virginica':
+      print('The summary of the virginica data is:')
+      printsummary(summaryvirginica)
+    elif species == 'all':
+      print('The summary of the entire data set is:')
+      printsummary(summaryall)
+  
+  elif mode == 'graph':  
+    graphtype = input('Would you like a scatter plot, histogram or normal distribution plot? (scat/hist/norm): ')
+    while graphtype not in ['scat', 'hist', 'norm']:
+      graphtype = ('Please type "scat", "hist" or "norm": ')
+    
+    if graphtype == 'scat':
+      xaxis = input('What data would you like on the x axis? (seplen/sepwid/petlen/petwid):')
+      while xaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
+        xaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
+      if xaxis == 'seplen':
+        xvalue = 0
+      if xaxis == 'sepwid':
+        xvalue = 1
+      if xaxis == 'petlen':
+        xvalue = 2
+      if xaxis == 'petwid':
+        xvalue = 3
+      yaxis = input('What data would you like on the y axis? (seplen/sepwid/petlen/petwid):')
+      while yaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
+        yaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
+      if yaxis == 'seplen':
+        yvalue = 0
+      if yaxis == 'sepwid':
+        yvalue = 1
+      if yaxis == 'petlen':
+        yvalue = 2
+      if yaxis == 'petwid':
+        yvalue = 3
+      species = input('For which species would you like to see the summary? (setosa/versicolor/virginica/all/allsame): ')
+      while species not in ['setosa', 'versicolor', 'virginica', 'all', 'allsame']:  
+        species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
+      scatter(xvalue,yvalue,species)
 
-printsummary(summaryall)
-printsummary(summarysetosa)
-printsummary(summaryversicolor)
-printsummary(summaryvirginica)  
+    if graphtype == 'hist':
+      yaxis = input('What data would you like to analyse? (seplen/sepwid/petlen/petwid):')
+      while yaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
+        yaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
+      if yaxis == 'seplen':
+        yvalue = 0
+      if yaxis == 'sepwid':
+        yvalue = 1
+      if yaxis == 'petlen':
+        yvalue = 2
+      if yaxis == 'petwid':
+        yvalue = 3
+      species = input('For which species would you like to see the summary? (setosa/versicolor/virginica/all/allsame): ')
+      while species not in ['setosa', 'versicolor', 'virginica', 'all', 'allsame']:  
+        species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
+      histogram(yvalue,species)      
+
+    if graphtype == 'norm':
+      yaxis = input('What data would you like to analyse? (seplen/sepwid/petlen/petwid):')
+      while yaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
+        yaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
+      if yaxis == 'seplen':
+        yvalue = 0
+      if yaxis == 'sepwid':
+        yvalue = 1
+      if yaxis == 'petlen':
+        yvalue = 2
+      if yaxis == 'petwid':
+        yvalue = 3
+      species = input('For which species would you like to see the summary? (setosa/versicolor/virginica/all/allsame): ')
+      while species not in ['setosa', 'versicolor', 'virginica', 'all', 'allsame']:  
+        species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
+      normdist(yvalue,species)      
+
+  playagain = input('Would you like to do more analysis? (yes/no): ')
+  while playagain not in ['yes','no']:
+    playagain = input('Would you like to do more analysis? (yes/no): ')
+  if playagain == 'yes':
+    session()
+  elif playagain == 'no':
+    quit()
+
+print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+print('*                                                                                       *')
+print('*                         Welcome to The Iris Data Set Anaylser                         *')
+print('*                                                                                       *')
+print('*                          Written by Patrick Moore, GMIT, 2018                         *')
+print('*                                                                                       *')
+print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+
+startsession = input('Would you like to analyse the Iris Data Set? (yes/no): ')
+while startsession not in ['yes', 'no']:
+  startsession = input('Would you like to analyse the Iris Data Set? (yes/no): ')
+if startsession == 'no':
+  quit()
+elif startsession == 'yes':
+  session()
+
+
+
+
+  
 
 #print(round(stddev(0),2))
 #print(round(stddev(1),2))
