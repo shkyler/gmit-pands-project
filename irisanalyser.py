@@ -3,13 +3,13 @@
 # irisanalyser.py is the script used to analyse the iris data set
 # Iris Data Set - (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
 
-# Section 1 - Basic Statistical Functions - In this section of the project, the functions used to analyse the data are defined
+# Section 1 - Basic Statistical Functions - In this section of the script, the functions used to analyse the data are defined
 
 def count(x,type):                                            # count(x,type) is a function that will count the number of rows in a particular data column, depending on the species of iris entered
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile
-    counter = 0                                               # this initialises a variable that will used to store the values of the count
+    counter = 0                                               # this initialises a variable that will be used to store the values of the count
     for line in myfile:                                       # this loop runs through the rows of the file one at a time
-      rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      rows = line.split(',')[0:5]                             # 'rows' is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
       if type == 'all':                                       # if 'all' is passed as an argument, the loop will count all rows in the column
         counter = counter + 1                      
       else:                                                   # otherwise the 5th column in the dataset is checked for the species that has been passed
@@ -17,7 +17,7 @@ def count(x,type):                                            # count(x,type) is
           counter = counter + 1                               # this will count the number of the rows which have the entered species in them
     return counter                                            # the counter is returned at the end with the number of rows in the data column that are for the desired variety
 
-def sum(x,type):                                              # sum(x) is a function that takes an argument of 'x' and then returns the sum of the values in column 'x' based on the secies entered as 'type'
+def sum(x,type):                                              # sum(x) is a function that takes an argument of 'x' and then returns the sum of the values in column 'x' based on the species entered 
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile                  
     sums = 0                                                  # this initialises a variable that will used to store the values of the sum
     for line in myfile:                                       # this loop runs through the rows of the file one at a time
@@ -26,7 +26,7 @@ def sum(x,type):                                              # sum(x) is a func
        sums = sums + float(rows[x])
       else:                                                   # otherwise the 5th column in the dataset is checked for the species that has been passed
         if type in rows[4]:                                   # this will sum the values in the rows which have the entered species in them 
-          sums = sums + float(rows[x])                        # on each pass through the loop sums is incremented with the float value of the line for the column specified by 'x'
+          sums = sums + float(rows[x])                        # on each pass through the loop 'sums' is incremented with the float value of the line for the column specified by 'x'
     return sums                                               # the final value of the sum is returned with the summation of all values in the specified column, with the specified species
 
 def mean(x,type):                                             # mean(x,type) takes a value x and a variety and returns the mean of the column x depending on the iris species specified
@@ -49,7 +49,7 @@ def max(x,type):                                              # max(x) is a func
 
 def min(x,type):                                              # min(x) is a function that takes an argument of 'x' and then returns the minimum value in column 'x' for the specified iris species
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile                           
-    minimum = max(x,type)                                     # this initialises a variable that will used to store the maximum value in column 'x' (value is initially set to the maximum so that the loop will find all the lower values)
+    minimum = max(x,type)                                     # this initialises a variable that will be used to store the maximum value in column 'x' (value is initially set to the maximum so that the loop will find all the lower values)
     for line in myfile:                                       # this loop run through the rows of the file one at a time
       rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
       if type == 'all':                                       # if the type is set to 'all', it will check the whole column
@@ -64,10 +64,10 @@ def min(x,type):                                              # min(x) is a func
 def stddev(x,type):                                           # stddev(x) is a function that takes an argument of 'x' and then returns the standard deviation of the data in column 'x' for a specified iris type
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile
     devsq = 0                                                 # this initialises a variable that will used to store the "deviations from the mean"
-    for line in myfile:                                       # this loop run through the rows of the file one at a time
-      rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
-      if type == 'all':                                       # if the type is set to 'all' the sum of devsq is calculated for the whole column 
-        devsq = devsq + (mean(x,type) - float(rows[x]))**2    # on each pass through the loop devsq is incremented by the value of the 'deviation from the mean' squared
+    for line in myfile:                                       # this loop runs through the rows of the file one at a time
+      rows = line.split(',')[0:5]                             # 'rows' is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
+      if type == 'all':                                       # if the type is set to 'all' the sum of 'devsq' is calculated for the whole column 
+        devsq = devsq + (mean(x,type) - float(rows[x]))**2    # on each pass through the loop 'devsq' is incremented by the value of the 'deviation from the mean' squared
       else:                                                   # otherwise the 'type' is checked in column 4 and it will increment devsq for the columns with the specified iris type
         if type in rows[4]:
           devsq = devsq + (mean(x,type) - float(rows[x]))**2  
@@ -77,7 +77,7 @@ def stddev(x,type):                                           # stddev(x) is a f
 def datacolumn(x,type):                                       # datacolumn() is a fuction that takes an argument 'x' and then returns a list of the data in column 'x' for a specified iris species
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile                  
     values = []                                               # this initialises a list variable that will used to store the values of column 'x'
-    for line in myfile:                                       # this loop run through the rows of the file one at a time
+    for line in myfile:                                       # this loop runs through the rows of the file one at a time
       rows = line.split(',')[0:5]                             # rows is a new string that temporarily stores the data values from each line split into seperate entries per column of the data set
       if type == 'all':                                       # if the type is set to 'all' - 'values' will be appended with the values of the whole column in order
         values.append(float(rows[x]))
@@ -292,7 +292,7 @@ def session():                                                                  
         species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
       normdist(yvalue,species)      
 
-  playagain = input('Would you like to do more analysis? (yes/no): ')                                                                       # once the session is over this establishes whether the user would like more infromation
+  playagain = input('Would you like to do more analysis? (yes/no): ')                                                                       # once the session is over this establishes whether the user would like more information
   while playagain not in ['yes','no']:
     playagain = input('Would you like to do more analysis? (yes/no): ')
   if playagain == 'yes':
@@ -300,7 +300,39 @@ def session():                                                                  
   elif playagain == 'no':
     quit()
 
-print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
+def help():                                                                                                                               # this can be run from the splash screen to explain some of the commands in the program
+  print("THE IRIS ANALYSER HELP FILE")                                                                                                    # if a user views the help file the program will automatically start a new session          
+  print(" ")
+  print("1. The Splash Screen")
+  print("yes        : Opens a new analysis session")
+  print("no         : Closes the program")
+  print("data       : Opens a new data summary session")  
+  print("graph      : Opens a new graphical analysis session")
+  print(" ")
+  print("2. The Data Summary Screen")
+  print("setosa     : Returns a data summary of the Iris-Setosa records")
+  print("versicolor : Returns a data summary of the Iris-Versicolor records")
+  print("virginica  : Returns a data summary of the Iris-Virginica records")
+  print("all        : Returns a data summary for all of the records in the set")
+  print(" ")
+  print("3. Graphical Analysis Screen")
+  print("scat       : Selects a scatter plot")
+  print("hist       : Selects a histogram")
+  print("norm       : Selects a normal distribution curve")
+  print("seplen     : Sepal Length")
+  print("sepwid     : Sepal Width")
+  print("petlen     : Petal Length")
+  print("petwid     : Petal Width")
+  print("setosa     : Plots the Iris-Setosa records")
+  print("versicolor : Plots the Iris-Versicolor records")
+  print("virginica  : Plots the Iris-Virginica records")
+  print("all        : Plots all of the records coloured differently per species")
+  print("allsame    : Plots all of the records the same color")
+  print(" ")
+  print("For further information please consult the README file for this project")
+  session()
+
+print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')          # The program starts here by printing the splash screen
 print('*                                                                                       *')
 print('*                         Welcome to The Iris Data Set Anaylser                         *')
 print('*                                                                                       *')
@@ -308,10 +340,12 @@ print('*                          Written by Patrick Moore, GMIT, 2018          
 print('*                                                                                       *')
 print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
 
-startsession = input('Would you like to analyse the Iris Data Set? (yes/no): ')
-while startsession not in ['yes', 'no']:
-  startsession = input('Would you like to analyse the Iris Data Set? (yes/no): ')
+startsession = input('Would you like to analyse the Iris Data Set? (yes/no/help): ')
+while startsession not in ['yes', 'no', 'help']:
+  startsession = input('Would you like to analyse the Iris Data Set? (yes/no/help): ')
 if startsession == 'no':
   quit()
 elif startsession == 'yes':
   session()
+elif startsession == 'help':
+  help()
