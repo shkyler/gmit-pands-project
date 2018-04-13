@@ -1,10 +1,9 @@
 # Patrick Moore 2018-03-26
 # This file contains a Python script to form part of my 2018 project for the Progamming and Scripting Module of the H.DIP in Data Analytics
-# Iris Analyser is the script used to analyse the iris data set
+# irisanalyser.py is the script used to analyse the iris data set
 # Iris Data Set - (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
-# Reference for the problem - (https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) fromt the Python Tutorial
 
-# Section 1 - Functions - In this section of the project, the functions used to analyse the data are defined
+# Section 1 - Basic Statistical Functions - In this section of the project, the functions used to analyse the data are defined
 
 def count(x,type):                                            # count(x,type) is a function that will count the number of rows in a particular data column, depending on the species of iris entered
   with open("data/iris.csv", "r") as myfile:                  # this statement opens the iris data set as an object called myfile
@@ -121,56 +120,56 @@ summaryvirginica = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght
                     ['Std Dev', str(round(stddev(0,'virginica'),2)), str(round(stddev(1,'virginica'),2)), str(round(stddev(2,'virginica'),2)), str(round(stddev(3,'virginica'),2))]
                     ]
 
-def printsummary(data):                                       # I researched how to format the out put here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python 
+def printsummary(data):                                       # I researched how to format the output here https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python 
   colwidth = 18                                               # 'printsummary' takes a list as an argument  
   for row in data:                                            # it loops through each row in the list   
     print("".join(cell.ljust(colwidth) for cell in row))      # it prints each item in the row, left justified and formatted to the column width specified
 
 # Section 3 - Graphics - In this section of the project, some graphics functions will created
 
-def scatter(x,y,type):                                                              # scatter is a function that uses matplotlib to create a scatter plot of the data, x and y are list vlaues to be plotted on the x and y axes, type is the species of iris
-  import matplotlib.pyplot as plt                                                   # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
-  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']      # this is a list of the data column names in the order they appear in the data set
-  if type == 'setosa':                                                              # if type is 'setosa' it will plot the corresponding x and y values by calling the datacolumn() function for the 'setosa' items
-    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red')
-  elif type == 'versicolor':                                                        # if type is 'versicolor' it will plot the corresponding x and y values by calling the datacolumn() function for the 'versicolor' items
-    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
-  elif type == 'virginica':                                                         # if type is 'virginica' it will plot the corresponding x and y values by calling the datacolumn() function for the 'virginica' items
-    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green')
-  elif type == 'all':                                                               # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured differently
-    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red')
-    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
-    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green')
+def scatter(x,y,type):                                                                                                # scatter is a function that uses matplotlib to create a scatter plot of the data, x and y are list vlaues to be plotted on the x and y axes, type is the species of iris
+  import matplotlib.pyplot as plt                                                                                     # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
+  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']                                        # this is a list of the data column names in the order they appear in the data set
+  if type == 'setosa':                                                                                                # if type is 'setosa' it will plot the corresponding x and y values by calling the datacolumn() function for the 'setosa' items
+    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red', label='setosa')
+  elif type == 'versicolor':                                                                                          # if type is 'versicolor' it will plot the corresponding x and y values by calling the datacolumn() function for the 'versicolor' items
+    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue', label = 'versisolor')
+  elif type == 'virginica':                                                                                           # if type is 'virginica' it will plot the corresponding x and y values by calling the datacolumn() function for the 'virginica' items
+    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green', label = 'virginica')
+  elif type == 'all':                                                                                                 # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured differently
+    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='red', label = 'setosa')
+    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue', label = 'versicolor')
+    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green', label = 'virginica')
   elif type == 'allsame':
-    plt.scatter(datacolumn(x,'setosa'),datacolumn(y,'setosa'), c='blue')            # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured the same (blue)
-    plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue')
-    plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='blue')  
-  plt.title(columnnames[y] + ' vs. ' + columnnames[x])                              # title will be given by looking up the 'columnnames' list
-  plt.ylim([0,10])                                                                  # both x any y axes set in the range 0 to 10
+    plt.scatter(datacolumn(x,'all'),datacolumn(y,'all'), c='blue', label = 'all')                                     # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured the same (blue)
+  plt.title(columnnames[y] + ' vs. ' + columnnames[x])                                                                # title will be given by looking up the 'columnnames' list
+  plt.legend()
+  plt.ylim([0,10])                                                                                                    # both x any y axes set in the range 0 to 10
   plt.xlim([0,10])
-  plt.xlabel(columnnames[x])                                                        # x and y axis labels given by looking up the 'columnnames' list
+  plt.xlabel(columnnames[x])                                                                                          # x and y axis labels given by looking up the 'columnnames' list
   plt.ylabel(columnnames[y])
-  plt.grid(True)                                                                    # this command puts a grid on the background of the plot area
-  plt.show()                                                                        # this command shows the plot
+  plt.grid(True)                                                                                                      # this command puts a grid on the background of the plot area
+  plt.show()                                                                                                          # this command shows the plot
 
 def histogram(y, type):
-  import matplotlib.pyplot as plt                                                   # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
-  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']      # this is a list of the data column names in the order they appear in the data set
-  if type == 'setosa':                                                              # if type is 'setosa' it will plot the corresponding y values by calling the datacolumn() function for the 'setosa' items
-    plt.hist(datacolumn(y,'setosa'), alpha = 0.5, lw = 3, color = 'r') 
-  elif type == 'versicolor':                                                        # if type is 'versicolor' it will plot the corresponding y values by calling the datacolumn() function for the 'versicolor' items
-    plt.hist(datacolumn(y,'versicolor'), alpha = 0.5, lw = 3, color = 'b')
-  elif type == 'virginica':                                                         # if type is 'virginica' it will plot the corresponding y values by calling the datacolumn() function for the 'virginica' items
-    plt.hist(datacolumn(y,'virginica'), alpha = 0.5, lw = 3, color = 'g')
-  elif type == 'all':                                                               # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - each set will be coloured differently
-    plt.hist(datacolumn(y,'setosa'), alpha = 0.5, lw = 3, color = 'r')
-    plt.hist(datacolumn(y,'versicolor'), alpha = 0.5, lw = 3, color = 'b')
-    plt.hist(datacolumn(y,'virginica'), alpha = 0.5, lw = 3, color = 'g')
+  import matplotlib.pyplot as plt                                                                                     # this statement imports the matplotlib library (REF: https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
+  columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']                                        # this is a list of the data column names in the order they appear in the data set
+  if type == 'setosa':                                                                                                # if type is 'setosa' it will plot the corresponding y values by calling the datacolumn() function for the 'setosa' items
+    plt.hist(datacolumn(y,'setosa'), alpha = 0.75, lw = 3, color = 'r', label = 'setosa') 
+  elif type == 'versicolor':                                                                                          # if type is 'versicolor' it will plot the corresponding y values by calling the datacolumn() function for the 'versicolor' items
+    plt.hist(datacolumn(y,'versicolor'), alpha = 0.75, lw = 3, color = 'b', label = 'versicolor')
+  elif type == 'virginica':                                                                                           # if type is 'virginica' it will plot the corresponding y values by calling the datacolumn() function for the 'virginica' items
+    plt.hist(datacolumn(y,'virginica'), alpha = 0.75, lw = 3, color = 'g', label = 'virginica')
+  elif type == 'all':                                                                                                 # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - each set will be coloured differently
+    plt.hist(datacolumn(y,'setosa'), alpha = 0.75, lw = 3, color = 'r', label = 'setosa')
+    plt.hist(datacolumn(y,'versicolor'), alpha = 0.75, lw = 3, color = 'b', label = 'versicolor')
+    plt.hist(datacolumn(y,'virginica'), alpha = 0.75, lw = 3, color = 'g', label = 'virginica')
   elif type == 'allsame':
-    plt.hist(datacolumn(y,'all'), alpha = 0.5, lw = 3, color = 'b')                 # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - all data will be coloured blue
-  plt.title('Histogram of: ' + columnnames[y] + ', ' + type)                        # title will be given by looking up the 'columnnames' list and using the specified 'type'
-  plt.ylabel('Count')                                                               # x axis label given by looking up the 'columnnames' list
-  plt.xlabel(columnnames[y])                                                        # this command shows the plot
+    plt.hist(datacolumn(y,'all'), alpha = 0.75, lw = 3, color = 'b', label = 'all')                                   # if type is 'all' it will plot the corresponding y values by calling the datacolumn() function for all items - all data will be coloured blue
+  plt.title('Histogram of: ' + columnnames[y] + ', ' + type)                                                          # title will be given by looking up the 'columnnames' list and using the specified 'type'
+  plt.legend(loc='upper right')
+  plt.ylabel('Count')                                                                                                 # x axis label given by looking up the 'columnnames' list
+  plt.xlabel(columnnames[y])                                                                                          # this command shows the plot
   plt.show()
         
 def normdist(x,type):                                                                                                                    # for this function - I expanded on code I found here: https://stackoverflow.com/questions/10138085/python-pylab-plot-normal-distribution             
@@ -180,38 +179,39 @@ def normdist(x,type):                                                           
   columnnames = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']                                                           # this is a list of the data column names in the order they appear in the data set
   if type == 'setosa':                                                                                                                   # if type is 'setosa' we will use only 'setosa' data         
     q = np.linspace(mean(x,'setosa') - 4*stddev(x,'setosa'), mean(x,'setosa') + 4*stddev(x,'setosa'), 100)
-    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red')
+    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red', label = 'setosa')
   elif type == 'versicolor':                                                                                                             # if type is 'versicolor' we will use only 'versicolor' data
     q = np.linspace(mean(x,'versicolor') - 4*stddev(x,'versicolor'), mean(x,'versicolor') + 4*stddev(x,'versicolor'), 100)
-    plt.plot(q,mlab.normpdf(q, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue')
+    plt.plot(q,mlab.normpdf(q, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue', label = 'versicolor')
   elif type == 'virginica':  
     q = np.linspace(mean(x,'virginica') - 4*stddev(x,'virginica'), mean(x,'virginica') + 4*stddev(x,'virginica'), 100)                   # if type is 'virginica' we will use only 'virginica' data
-    plt.plot(q,mlab.normpdf(q, mean(x,'virginica'), stddev(x,'virginica')), c='green')
+    plt.plot(q,mlab.normpdf(q, mean(x,'virginica'), stddev(x,'virginica')), c='green', label = 'virginica')
   elif type == 'all':                                                                                                                     # if type is 'all' we will use all data plotted seperately on the same axis     
     q = np.linspace(mean(x,'setosa') - 4*stddev(x,'setosa'), mean(x,'setosa') + 4*stddev(x,'setosa'), 100)
-    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red')    
+    plt.plot(q,mlab.normpdf(q, mean(x,'setosa'), stddev(x,'setosa')), c='red', label = 'setosa')    
     r = np.linspace(mean(x,'versicolor') - 4*stddev(x,'versicolor'), mean(x,'versicolor') + 4*stddev(x,'versicolor'), 100)
-    plt.plot(r,mlab.normpdf(r, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue')
+    plt.plot(r,mlab.normpdf(r, mean(x,'versicolor'), stddev(x,'versicolor')),c='blue', label = 'versicolor')
     s = np.linspace(mean(x,'virginica') - 4*stddev(x,'virginica'), mean(x,'virginica') + 4*stddev(x,'virginica'), 100)
-    plt.plot(s,mlab.normpdf(s, mean(x,'virginica'), stddev(x,'virginica')),c='green')
+    plt.plot(s,mlab.normpdf(s, mean(x,'virginica'), stddev(x,'virginica')),c='green', label = 'virginica')
   elif type == 'allsame':                                                                                                                 # if type is 'all' we will use the whole data set          
     q = np.linspace(mean(x,'all') - 4*stddev(x,'all'), mean(x,'all') + 4*stddev(x,'all'), 100)
-    plt.plot(q,mlab.normpdf(q, mean(x,'all'), stddev(x,'all')), c='blue')          
+    plt.plot(q,mlab.normpdf(q, mean(x,'all'), stddev(x,'all')), c='blue', label = 'all')          
+  plt.legend()
   plt.title('Normal Distribution Plot: ' + columnnames[x] + ', ' + type)                                                                  # title will be given by looking up the 'columnnames' list and using the specified 'type'
   plt.ylabel('Probability')                                                                                                               # x axis label given by looking up the 'columnnames' list
   plt.xlabel(columnnames[x]) 
   plt.show()
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
-def session():
-  mode = input('Would you like a data summary or a graphical summary? (data/graph): ')
+def session():                                                                                                                            # session() is a fuction used to interact with the user to select the parameters of the analysis session
+  mode = input('Would you like a data summary or a graphical summary? (data/graph): ')                                                    # this block of code asks the user if they want graphical analysis or a data summary
   while mode not in ['data', 'graph']:
-    mode = input('Please type either "data" or "graph": ')
+    mode = input('Please type either "data" or "graph": ')                                                                                # note all user inputs are validated using a while loop to prevent bad inputs
 
-  if mode == 'data':
+  if mode == 'data':                                                                                                                      # this block of code produces a data summary in accordance with the user inputs
     species = input('For which species would you like to see the summary? (setosa/versicolor/virginica/all): ')
     while species not in ['setosa', 'versicolor', 'virginica', 'all']:  
-      species = input('Please type "setosa", "versicolor", "virginica", "all"')
+      species = input('Please type "setosa", "versicolor", "virginica", "all" ')
     if species == 'setosa':
       print('The summary of the setosa data is:')
       printsummary(summarysetosa)
@@ -225,12 +225,12 @@ def session():
       print('The summary of the entire data set is:')
       printsummary(summaryall)
   
-  elif mode == 'graph':  
+  elif mode == 'graph':                                                                                                                      # this block of code establishes which graph is required   
     graphtype = input('Would you like a scatter plot, histogram or normal distribution plot? (scat/hist/norm): ')
     while graphtype not in ['scat', 'hist', 'norm']:
-      graphtype = ('Please type "scat", "hist" or "norm": ')
+      graphtype = input('Please type "scat", "hist" or "norm": ')
     
-    if graphtype == 'scat':
+    if graphtype == 'scat':                                                                                                                 # this block of code gets the information for a scatter plot from the user
       xaxis = input('What data would you like on the x axis? (seplen/sepwid/petlen/petwid):')
       while xaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
         xaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
@@ -258,7 +258,7 @@ def session():
         species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
       scatter(xvalue,yvalue,species)
 
-    if graphtype == 'hist':
+    if graphtype == 'hist':                                                                                                                 # this block of code gets the parameters required for a histogram from the user                                               
       yaxis = input('What data would you like to analyse? (seplen/sepwid/petlen/petwid):')
       while yaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
         yaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
@@ -275,7 +275,7 @@ def session():
         species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
       histogram(yvalue,species)      
 
-    if graphtype == 'norm':
+    if graphtype == 'norm':                                                                                                                 # this block of code gets the parameters from a normal distribution curve from the user
       yaxis = input('What data would you like to analyse? (seplen/sepwid/petlen/petwid):')
       while yaxis not in ['seplen','sepwid', 'petlen', 'petwid']:
         yaxis = input('Choose "seplen" "sepwid", "petlen" or "petwid"')
@@ -292,7 +292,7 @@ def session():
         species = input('Please type "setosa", "versicolor", "virginica", "allsame"')
       normdist(yvalue,species)      
 
-  playagain = input('Would you like to do more analysis? (yes/no): ')
+  playagain = input('Would you like to do more analysis? (yes/no): ')                                                                       # once the session is over this establishes whether the user would like more infromation
   while playagain not in ['yes','no']:
     playagain = input('Would you like to do more analysis? (yes/no): ')
   if playagain == 'yes':
