@@ -112,13 +112,18 @@ The simplest way to download the program is to clone the following repository fr
 
 https://github.com/shkyler/gmit-pands-project
 
-In order for the program to run successfully the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a director called 'data', and this 'data folder must be located in the same directory as the 'irisanalyser.py' script.
+In order for the program to run successfully, the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a directory called 'data', and this 'data' folder must be located in the same directory as the 'irisanalyser.py' script.
 
 The program can be ran from any terminal window by using the 'cd' command to move into the same directory as the 'irisanalyser.py' script and running the following command:
 
 python3 irisanalyser.py
 
 **Note that the splash screen and data summaries are quite wide and in order for them to render correctly in the terminal, the terminal window should be full screen**   
+
+#### 3.2.2 Using the Iris Analyser
+Once the script has been down loaded and ran in a terminal window, you should see the following screen:
+![Splash](/img/splash.png)
+
 
 ## 4. Analysis of the Iris Data Set
 ### 4.1 Results
