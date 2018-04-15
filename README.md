@@ -146,7 +146,7 @@ The commands for a scatter plot of Sepal Width vs. Sepal Lenght for all 3 specie
 The resulting graph would look like this:
 ![scatgraph](/img/scatgraph.png)
 
-Note once the chart window is closed down, the program will ask the user if they would like to do more analysis. As before type 'yes' to continue or 'no' to quit.
+Note that once the chart window is closed down, the program will ask the user if they would like to do more analysis. As before type 'yes' to continue or 'no' to quit.
 
 ## 4. Analysis of the Iris Data Set
 ### 4.1 Results
