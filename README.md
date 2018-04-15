@@ -89,7 +89,7 @@ _**summaryvirginica**_ is an array which contains the sum, maximum value, minimu
 _**printsummary(data)**_ is a function that takes one of the four data summaries as an argument and prints it to the colsole in a neatly formatted grid[13].
 
 #### 3.1.3 - Section 3 - Graphics
-In this section of the code, the functions for creating graphical plots of the data are defined. The matplotlib library [14] is used here. Functions are included for creating three different graph types, these are the scatter plot, the histogram and the normal distribtion. These functions are described below:
+In this section of the code, the functions for creating graphical plots of the data are defined. The matplotlib library [14] is used here. Functions are included for creating three different graph types. These are the scatter plot, the histogram and the normal distribtion. These functions are described below:
 
 _**scatter(x,y,type):**_ This is a function that takes 3 arguments(x is an int,y is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a scatter plot by calling the datacolumn() function for the columns specified by 'x' and 'y'.[15]
 
@@ -98,7 +98,13 @@ _**histogram(y,type):**_ This is a function that takes 2 arguments(y is an int, 
 _**normdist(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a normal distribution curve by calling the datacolumn() function for the column specified by 'x'. [17]
 
 #### 3.1.4 - Section 4 - User Interface
+The user interface is the part of the software that the user will interact with. It will asks questions of the user in order to get the required details. It will then use these user inputs to create the outputs required and return them to the user. There are 3 main parts to the user interface:
 
+_**The Splash Screen**_ When the program is first run this is what is printed to the terminal. It serves as a home screen. From here the user can decide to either analyse data, see the help file or quit the program.
+
+_**help():**_ This is a very simple function that prints out a list of commands that can be accepted by the program, ordered by the various screens in the program. It can only be run from the splash screen and once it is run it will automatically start up a new analysis session.
+
+_**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this trick was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() funtion will ask if more analysis is required. From here the user can either quit the program or start another session.
 
 ### 3.2 How to use it
 
@@ -123,4 +129,6 @@ _**normdist(x,type):**_ This is a function that takes 2 arguments(x is an int, t
 1. [14] Matplotlib. (_https://matplotlib.org/_)
 1. [15] Matplotlib. matplotlib.pyplot.scatter.(_https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter_)
 1. [16] Matplotlib. matplotlib.pyplot.hist (_https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html_)
+1. [17] Stack Overflow. python pylab plot normal distribution.(_https://stackoverflow.com/questions/10138085/python-pylab-plot-normal-distribution_)
+1. [18] Practice Python. Rock Paper Scissors. (_https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html_)
 
