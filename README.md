@@ -104,9 +104,21 @@ _**The Splash Screen**_ When the program is first run this is what is printed to
 
 _**help():**_ This is a very simple function that prints out a list of commands that can be accepted by the program, ordered by the various screens in the program. It can only be run from the splash screen and once it is run it will automatically start up a new analysis session.
 
-_**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this trick was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() funtion will ask if more analysis is required. From here the user can either quit the program or start another session.
+_**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this lesson was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() function will ask if more analysis is required. From here the user can either quit the program or start another session.
 
-### 3.2 How to use it
+### 3.2 Instructions for using the Iris Analyser
+#### 3.2.1 Downloading the program
+The simplest way to download the program is to clone the following repository from Github:
+
+https://github.com/shkyler/gmit-pands-project
+
+In order for the program to run successfully the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a director called 'data', and this 'data folder must be located in the same directory as the 'irisanalyser.py' script.
+
+The program can be ran from any terminal window by using the 'cd' command to move into the same directory as the 'irisanalyser.py' script and running the following command:
+
+python3 irisanalyser.py
+
+**Note that the splash screen and data summaries are quite wide and in order for them to render correctly in the terminal, the terminal window should be full screen**   
 
 ## 4. Analysis of the Iris Data Set
 ### 4.1 Results
