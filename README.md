@@ -1,3 +1,4 @@
+![GMIT Logo](/img/GMITLOGO.jpg)
 # GMIT, H.Dip in Data Analytics, Progamming and Scripting Project 2018
 ## 1. Introduction
 This repository contains all of the files pertaining to my 2018 project submission for the Programming and Scripting module of the GMIT H.Dip program in Data Analytics. All of the work within this repository was carried out over the course of a 5 week period in March and April 2018. This README contains the complete documentation for the project. 
@@ -12,14 +13,14 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 
 ## 2. The Iris Data Set Background
 ### 2.1 The Iris Data Set [2]
-The Iris data set is a set of data containing information about iris flowers. The data contains 150 diferent data points. For each data point there are 5 pieces of information. These are [3]:
+The Iris data set is a set of data containing information about iris flowers. The data contains 150 different data points. For each data point there are 5 pieces of information. These are [3]:
 1. The sepal lenght in cms
 1. The sepal width in cms
 1. The petal lenght in cms
 1. The petal width in cms
 1. The class (Iris Setosa, Iris Verticolour or Iris Virginica)
 
-The class represents the species of the iris flower and in the set there are 50 points for each of the 3 iris species. The data set is a multivariate data set as it involves data with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edgar Anderson while working on a study of the physical differences between 3 related species of iris flower. Fisher used the data set as an example of _linear discriminate analysis_[9], and it is now commonly used as a typical test case in many statistical classification techniques (see section 2.3).
+The class represents the species of the iris flower and in the set there are 50 points for each of the 3 iris species. The data set is a multivariate data set as it involves data points with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edgar Anderson while working on a study of the physical differences between 3 related species of iris flower. Fisher used the data set as an example of _linear discriminate analysis_[9], and it is now commonly used as a typical test case in many statistical classification techniques (see section 2.3).
 
 ### 2.2 Edgar Anderson and Ronald Fisher
 ![Anderson](/img/Anderson.jpg)
@@ -28,8 +29,8 @@ Edgar Anderson was an American botanist who lived in the early part of the 20th 
 
 ![Fisher](/img/Fisher.jpg)
 
-Ronald Fisher was a contemporary of Anderson. In addition to being the greatest statistician ever, he invented experimental design and was a principal founder of population genetics [7]. 
-In 1925, he released his book "_Statistical Methods for Research Workers_" which soon revolutionise both statistics and biology. In fact, he has been described as "_a genius who almost single-handedly created the foundations for modern statistical science_" [8].
+Ronald Fisher was a contemporary of Anderson. In addition to being probably the greatest statistician ever, he invented experimental design and was a principal founder of population genetics [7]. 
+In 1925, he released his book "_Statistical Methods for Research Workers_" which soon revolutionised both statistics and biology. In fact, he has been described as "_a genius who almost single-handedly created the foundations for modern statistical science_" [8].
 
 ### 2.3 The Purpose of Linear Discriminant Analysis (LDA) [9]
 The purpose of LDA is to classify objects into groups based on a set of features that describe the objects. In general, an object is placed into one of a number of predetermined groups based on the outcome of some obsertvations made on that object. In order to classify items properly the following must be decided:
@@ -66,7 +67,7 @@ While carrying out research into the iris data set it quickly became apparent th
 1. [4] Wikipedia. Multivariate statistics (_https://en.wikipedia.org/wiki/Multivariate_statistics_)
 1. [5] Wikipedia. Edgar Anderson (_https://en.wikipedia.org/wiki/Edgar_Anderson_)
 1. [6] Edgar Anderson (1935). "_The irises of the Gaspé Peninsula_"
-1. [7] Famous Scietists. Ronald Fisher. (_https://www.famousscientists.org/ronald-fisher_)
+1. [7] Famous Scientists. Ronald Fisher. (_https://www.famousscientists.org/ronald-fisher_)
 1. [8] Anders Hald (1998). (_A History of Mathematical Statistics._)
 1. [9] Linear Discriminate Analysis (LDA).(_http://people.revoledu.com/kardi/tutorial/LDA/LDA.htm_l)
 1. [10] Stack Exchange. "What aspects of the “Iris” data set make it so successful as an example/teaching/test data set" (_https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching_)
