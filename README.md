@@ -54,11 +54,18 @@ While carrying out research into the iris data set it quickly became apparent th
 
 1. _Using a few famous datasets is one of the traditions we hand down, such as telling each new generation that Student worked for Guinness. Using a few test datasets affords some continuty in now new test methods are assessed._
 
-## 3. My Code
-### 3.1 What it does
+## 3. The Iris Analyser
+The Iris Analyser id a piece of software written in the Python [11] programming language which can be used to carry out analysis of the iris data set. The entire program was written as part of this project. This section of the README will look first at the code in the analyser and then explain how to run the program and use it analyse the iris data set.
+### 3.1 Description of the code in irisanalyser.py
+The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read it has been split into four main sections using comments in the code. These will be explained one at a time.
+#### 3.1.1 - Section 1 - Basic Statistical Functions
+In this section of the code some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scrath as part of this research and learning exercise. These functions are as follows:
+_**count(x,type)**_
 ### 3.2 How to use it
-### 3.3 Results obtained from the analysis with some graphics if possible
-### 3.4 Discussion of the results
+
+## 4. Analysis of the Iris Data Set
+### 4.1 Results
+### 4.2 Discussion
 
 ## References
 1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (_https://learnonline.gmit.ie/mod/url/view.php?id=199458_)
