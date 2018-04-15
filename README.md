@@ -86,7 +86,19 @@ _**summaryversicolor**_ is an array which contains the sum, maximum value, minim
 
 _**summaryvirginica**_ is an array which contains the sum, maximum value, minimum value, mean and standard deviation for each of the four columns in the data set. It summarises data for the 50 Iris-virginica data points in the data set.
 
-_**printsummary(data0**_ is a function that takes one of the four data summaries as an argument and prints it to the colsole in a neat formatted grid[13].
+_**printsummary(data)**_ is a function that takes one of the four data summaries as an argument and prints it to the colsole in a neatly formatted grid[13].
+
+#### 3.1.3 - Section 3 - Graphics
+In this section of the code, the functions for creating graphical plots of the data are defined. The matplotlib library [14] is used here. Functions are included for creating three different graph types, these are the scatter plot, the histogram and the normal distribtion. These functions are described below:
+
+_**scatter(x,y,type):**_ This is a function that takes 3 arguments(x is an int,y is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a scatter plot by calling the datacolumn() function for the columns specified by 'x' and 'y'.[15]
+
+_**histogram(y,type):**_ This is a function that takes 2 arguments(y is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a histogram plot by calling the datacolumn() function for the column specified by 'y'. [16]
+
+_**normdist(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a normal distribution curve by calling the datacolumn() function for the column specified by 'x'. [17]
+
+#### 3.1.4 - Section 4 - User Interface
+
 
 ### 3.2 How to use it
 
@@ -106,6 +118,9 @@ _**printsummary(data0**_ is a function that takes one of the four data summaries
 1. [9] Linear Discriminate Analysis (LDA).(_http://people.revoledu.com/kardi/tutorial/LDA/LDA.htm_l)
 1. [10] Stack Exchange. "What aspects of the “Iris” data set make it so successful as an example/teaching/test data set" (_https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching_)
 1. [11] Python Software Foundation. Welcome to Python. (_https://www.python.org/_)
-1. [12] Wikipedia. Standard Deviation (_https://en.wikipedia.org/wiki/Standard_deviation_)
+1. [12] Wikipedia. Standard Deviation. (_https://en.wikipedia.org/wiki/Standard_deviation_)
 1. [13] Stack Overflow. Create nice column output in python. (_https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python_)
+1. [14] Matplotlib. (_https://matplotlib.org/_)
+1. [15] Matplotlib. matplotlib.pyplot.scatter.(_https://matplotlib.org/2.2.2/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter_)
+1. [16] Matplotlib. matplotlib.pyplot.hist (_https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html_)
 
