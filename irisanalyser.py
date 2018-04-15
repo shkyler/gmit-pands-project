@@ -88,7 +88,7 @@ def datacolumn(x,type):                                       # datacolumn() is 
 
 # Section 2 - Data Summary - In this section of the project, the functions and data structures that are used to summarise the data are defined. All the data is formatted to 2 decimal places and converted to strings to improve printing
 
-summaryall = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width (cm)'],                                                     # summaryall summarises the data for all species of iris into one list
+summaryall = [[' ', 'Sepal Length (cm)', 'Sepal Width (cm)', 'Petal Length (cm)','Petal Width (cm)'],                                                     # summaryall summarises the data for all species of iris into one list
               ['Sum', str(round(sum(0,'all'),2)), str(round(sum(1,'all'),2)), str(round(sum(2,'all'),2)), str(round(sum(3,'all'),2))],
               ['Max', str(round(max(0,'all'),2)), str(round(max(1,'all'),2)), str(round(max(2,'all'),2)), str(round(max(3,'all'),2))],
               ['Min', str(round(min(0,'all'),2)), str(round(min(1,'all'),2)), str(round(min(2,'all'),2)), str(round(min(3,'all'),2))],
@@ -96,7 +96,7 @@ summaryall = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)'
               ['Std Dev', str(round(stddev(0,'all'),2)), str(round(stddev(1,'all'),2)), str(round(stddev(2,'all'),2)), str(round(stddev(3,'all'),2))]
              ]
 
-summarysetosa = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width (cm)'],                                                     # summarysetosa summarises the data for iris-setosa into one list
+summarysetosa = [[' ', 'Sepal Length (cm)', 'Sepal Width (cm)', 'Petal Length (cm)','Petal Width (cm)'],                                                     # summarysetosa summarises the data for iris-setosa into one list
                 ['Sum', str(round(sum(0,'setosa'),2)), str(round(sum(1,'setosa'),2)), str(round(sum(2,'setosa'),2)), str(round(sum(3,'setosa'),2))],
                 ['Max', str(round(max(0,'setosa'),2)), str(round(max(1,'setosa'),2)), str(round(max(2,'setosa'),2)), str(round(max(3,'setosa'),2))],
                 ['Min', str(round(min(0,'setosa'),2)), str(round(min(1,'setosa'),2)), str(round(min(2,'setosa'),2)), str(round(min(3,'setosa'),2))],
@@ -104,7 +104,7 @@ summarysetosa = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (c
                 ['Std Dev', str(round(stddev(0,'setosa'),2)), str(round(stddev(1,'setosa'),2)), str(round(stddev(2,'setosa'),2)), str(round(stddev(3,'setosa'),2))]
                 ]
 
-summaryversicolor = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width (cm)'],                                                     # summaryversicolor summarises the data for iris-versicolor into one list
+summaryversicolor = [[' ', 'Sepal Length (cm)', 'Sepal Width (cm)', 'Petal Length (cm)','Petal Width (cm)'],                                                     # summaryversicolor summarises the data for iris-versicolor into one list
                     ['Sum', str(round(sum(0,'versicolor'),2)), str(round(sum(1,'versicolor'),2)), str(round(sum(2,'versicolor'),2)), str(round(sum(3,'versicolor'),2))],
                     ['Max', str(round(max(0,'versicolor'),2)), str(round(max(1,'versicolor'),2)), str(round(max(2,'versicolor'),2)), str(round(max(3,'versicolor'),2))],
                     ['Min', str(round(min(0,'versicolor'),2)), str(round(min(1,'versicolor'),2)), str(round(min(2,'versicolor'),2)), str(round(min(3,'versicolor'),2))],
@@ -112,7 +112,7 @@ summaryversicolor = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lengh
                     ['Std Dev', str(round(stddev(0,'versicolor'),2)), str(round(stddev(1,'versicolor'),2)), str(round(stddev(2,'versicolor'),2)), str(round(stddev(3,'versicolor'),2))]
                     ]
 
-summaryvirginica = [[' ', 'Sepal Lenght (cm)', 'Sepal Width (cm)', 'Petal Lenght (cm)','Petal Width (cm)'],                                                     # summaryvirginica summarises the data for iris-virginica into one list
+summaryvirginica = [[' ', 'Sepal Length (cm)', 'Sepal Width (cm)', 'Petal Length (cm)','Petal Width (cm)'],                                                     # summaryvirginica summarises the data for iris-virginica into one list
                     ['Sum', str(round(sum(0,'virginica'),2)), str(round(sum(1,'virginica'),2)), str(round(sum(2,'virginica'),2)), str(round(sum(3,'virginica'),2))],
                     ['Max', str(round(max(0,'virginica'),2)), str(round(max(1,'virginica'),2)), str(round(max(2,'virginica'),2)), str(round(max(3,'virginica'),2))],
                     ['Min', str(round(min(0,'virginica'),2)), str(round(min(1,'virginica'),2)), str(round(min(2,'virginica'),2)), str(round(min(3,'virginica'),2))],

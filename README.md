@@ -134,11 +134,11 @@ Note that the program now asks whether or not more analysis is required, the use
 
 If the user types 'yes', they will then be asked do they want a data summary or graphical analysis. Typing 'graph' will open the graphical summary module.
 
-There are 3 options in this module scat, hist or norm. Typing 'scat' will allow the user to bring up a scatter plot of 2 columns of the data. Typing 'hist' can be used for a histogram of one column of the data and typing 'norm' can be used to plot a normal distribution curve on one column of the data.
+There are 3 options in this module 'scat', 'hist' or 'norm'. Typing 'scat' will allow the user to bring up a scatter plot of 2 columns of the data. Typing 'hist' can be used for a histogram of one column of the data and typing 'norm' can be used to plot a normal distribution curve using data from one column of the data.
 
 For the columns, typing 'seplen' will select the 'Sepal Length', 'sepwid' will select 'Sepal Width', 'petlen' will select 'Petal Length' and 'petwid' will select 'Petal Width'.
 
-Once a the graph type and columns have been selected, the program will ask for an iris species. 'setosa' will return 'Iris-setosa' data plotted in red, 'versicolor' will return 'Iris-versicolor' data plotted in blue and 'virginica' will return 'Iris-virginica' data plotted in green. 'all' will return all species on the same axis plotted in there respective colours. 'allsame' returns data for the entire data set plotted as one series in blue.
+Once a the graph type and columns have been selected, the program will ask for an iris species. 'setosa' will return 'Iris-setosa' data plotted in red, 'versicolor' will return 'Iris-versicolor' data plotted in blue and 'virginica' will return 'Iris-virginica' data plotted in green. 'all' will return all species on the same axis plotted in their respective colours. 'allsame' returns data for the entire data set plotted as one series in blue.
 
 The commands for a scatter plot of Sepal Width vs. Sepal Lenght for all 3 species in seperate colours is shown below:
 ![scatcommands](/img/scatcommands.png)
