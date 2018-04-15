@@ -59,7 +59,7 @@ The Iris Analyser id a piece of software written in the Python [11] programming 
 ### 3.1 Description of the code in irisanalyser.py
 The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read it has been split into four main sections using comments in the code. These will be explained one at a time.
 #### 3.1.1 - Section 1 - Basic Statistical Functions
-In this section of the code some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scrath as part of this research and learning exercise. These functions are as follows:
+In this section of the code, some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scrath as part of this research and learning exercise. These functions are as follows:
 
 _**count(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return a 'count' f the required data as specified by the arguments passed.
 
@@ -74,6 +74,19 @@ _**min(x,type):**_ This is a function that takes 2 arguments(x is an int, type i
 _**stddev(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return the standard deviation[12] of the required data as specified by the arguments passed. The algorithm was designed around the definitions on the wikipedia page.
 
 _**datacolumn(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return an array containing the data values from the species and data column specified by the arguments - this function is useful for graphical analysis of the data.
+
+#### 3.1.2 - Section 2 - Data Summary
+In this section of the code, the functions from Section 1 are used to define some data summaries of each data column. Four data summaries are defined as follows:
+
+_**summaryall**_ is an array which contains the sum, maximum value, minimum value, mean and standard deviation for each of the four columns in the data set. It summarises data for all 150 data points in the data set.
+
+_**summarysetosa**_ is an array which contains the sum, maximum value, minimum value, mean and standard deviation for each of the four columns in the data set. It summarises data for the 50 Iris-setosa data points in the data set.
+
+_**summaryversicolor**_ is an array which contains the sum, maximum value, minimum value, mean and standard deviation for each of the four columns in the data set. It summarises data for the 50 Iris-versicolor data points in the data set.
+
+_**summaryvirginica**_ is an array which contains the sum, maximum value, minimum value, mean and standard deviation for each of the four columns in the data set. It summarises data for the 50 Iris-virginica data points in the data set.
+
+_**printsummary(data0**_ is a function that takes one of the four data summaries as an argument and prints it to the colsole in a neat formatted grid[13].
 
 ### 3.2 How to use it
 
@@ -94,4 +107,5 @@ _**datacolumn(x,type):**_ This is a function that takes 2 arguments(x is an int,
 1. [10] Stack Exchange. "What aspects of the “Iris” data set make it so successful as an example/teaching/test data set" (_https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching_)
 1. [11] Python Software Foundation. Welcome to Python. (_https://www.python.org/_)
 1. [12] Wikipedia. Standard Deviation (_https://en.wikipedia.org/wiki/Standard_deviation_)
+1. [13] Stack Overflow. Create nice column output in python. (_https://stackoverflow.com/questions/9989334/create-nice-column-output-in-python_)
 
