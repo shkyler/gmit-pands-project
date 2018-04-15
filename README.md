@@ -60,6 +60,7 @@ The Iris Analyser id a piece of software written in the Python [11] programming 
 The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read it has been split into four main sections using comments in the code. These will be explained one at a time.
 #### 3.1.1 - Section 1 - Basic Statistical Functions
 In this section of the code some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scrath as part of this research and learning exercise. These functions are as follows:
+
 _**count(x,type)**_
 ### 3.2 How to use it
 
