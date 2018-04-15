@@ -124,6 +124,14 @@ python3 irisanalyser.py
 Once the script has been down loaded and ran in a terminal window, you should see the following screen:
 ![Splash](/img/splash.png)
 
+Type 'no' to quit the program, 'yes' to progress, or 'help' to get some assistance regarding the commands used at various stages in the program. Note, that if the 'help' command is entered the program will automatically start once the help instructions have been printed. The help file looks like this:
+![Help](/img/help.png)
+
+The program then asks whether the user would like a data summary or graphical summary. If a data summary is required 'data' should be entered. The program will then ask the user which species they require a data summary for. 'all', 'setosa', 'versicolor' or 'virginica' can be entered. The data summary for 'all' can be seen below:
+![allsumm](/img/allsumm.png)
+
+Note that the program now asks whether or not more analysis is required, the user can type 'yes' to do more analysis or 'no' to quit the program
+
 
 ## 4. Analysis of the Iris Data Set
 ### 4.1 Results
