@@ -107,16 +107,21 @@ _**help():**_ This is a very simple function that prints out a list of commands 
 _**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this lesson was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() function will ask if more analysis is required. From here the user can either quit the program or start another session.
 
 ### 3.2 Instructions for using the Iris Analyser
+<<<<<<< HEAD
 #### 3.2.1 Cloning the repository
 You can clone the following repository from Github by typing the folowwing command:
+=======
+#### 3.2.1 Downloading the program
+Clone the following repository from Github:
+>>>>>>> ec68922a49f6e6702ca1a939334005500356e393
 
-https://github.com/shkyler/gmit-pands-project
+```git clone https://github.com/shkyler/gmit-pands-project```
 
 In order for the program to run successfully, the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a directory called 'data', and this 'data' folder must be located in the same directory as the 'irisanalyser.py' script.
 
 The program can be ran from any terminal window by using the 'cd' command to move into the same directory as the 'irisanalyser.py' script and running the following command:
 
-python3 irisanalyser.py
+```python3 irisanalyser.py```
 
 **Note that the splash screen and data summaries are quite wide and in order for them to render correctly in the terminal, the terminal window should be full screen**   
 
