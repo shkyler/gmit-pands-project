@@ -108,7 +108,7 @@ _**session():**_ THis is a function used to manage an analysis sesssion. It asks
 
 ### 3.2 Instructions for using the Iris Analyser
 #### 3.2.1 Cloning the repository
-You can clone the following repository from Github by typing the folowwing command:
+You can clone the following repository from Github by typing the following command:
 
 ```git clone https://github.com/shkyler/gmit-pands-project```
 
