@@ -14,9 +14,9 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 ## 2. The Iris Data Set Background
 ### 2.1 The Iris Data Set [2]
 The Iris data set is a set of data containing information about iris flowers. The data contains 150 different data points. For each data point there are 5 pieces of information. These are [3]:
-1. The sepal lenght in cms
+1. The sepal length in cms
 1. The sepal width in cms
-1. The petal lenght in cms
+1. The petal length in cms
 1. The petal width in cms
 1. The class (Iris Setosa, Iris Verticolour or Iris Virginica)
 
@@ -52,14 +52,14 @@ While carrying out research into the iris data set it quickly became apparent th
 
 1. _The data were used by the celebrated British statistician Ronald Fisher in 1936. (Later he was knighted and became Sir Ronald.) At least some teachers like the idea of a dataset with a link to someone so well known within the field. The data were originally published by the statistically-minded botanist Edgar S. Anderson, but that earlier origin does not diminish the association._
 
-1. _Using a few famous datasets is one of the traditions we hand down, such as telling each new generation that Student worked for Guinness. Using a few test datasets affords some continuty in now new test methods are assessed._
+1. _Using a few famous datasets is one of the traditions we hand down, such as telling each new generation that Student (William Sealy Gosset) worked for Guinness. Using a few test datasets affords some continuty in now new test methods are assessed._
 
 ## 3. The Iris Analyser
-The Iris Analyser id a piece of software written in the Python [11] programming language which can be used to carry out analysis of the iris data set. The entire program was written as part of this project. This section of the README will look first at the code in the analyser and then explain how to run the program and use it analyse the iris data set.
+The Iris Analyser is a piece of software written in the Python [11] programming language which can be used to carry out analysis of the iris data set. The entire program was written as part of this project. This section of the README will look first at the code in the analyser and then explain how to run the program and use it analyse the iris data set.
 ### 3.1 Description of the code in irisanalyser.py
 The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read it has been split into four main sections using comments in the code. These will be explained one at a time.
 #### 3.1.1 - Section 1 - Basic Statistical Functions
-In this section of the code, some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scrath as part of this research and learning exercise. These functions are as follows:
+In this section of the code, some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scratch as part of this research and learning exercise. These functions are as follows:
 
 _**count(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return a 'count' f the required data as specified by the arguments passed.
 
@@ -107,8 +107,8 @@ _**help():**_ This is a very simple function that prints out a list of commands 
 _**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this lesson was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() function will ask if more analysis is required. From here the user can either quit the program or start another session.
 
 ### 3.2 Instructions for using the Iris Analyser
-#### 3.2.1 Downloading the program
-The simplest way to download the program is to clone the following repository from Github:
+#### 3.2.1 Cloning the repository
+You can clone the following repository from Github by typing the folowwing command:
 
 https://github.com/shkyler/gmit-pands-project
 
