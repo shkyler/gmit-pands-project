@@ -199,7 +199,7 @@ This analysis calculates a 'class correlation co-efficient' for each of the 4 ch
 * Petal Length - 0.9490 (high!)
 * Petal Width - 0.9565 (high!)
 
-The class correlation co-efficient describes how stongly units in the same group resemble each other [20]. The higher the value to more related to each other items in the group are.
+The class correlation co-efficient describes how stongly units in the same group resemble each other [20]. The higher the value, the more related to each other items in the group are.
 
 Based on the the initial analyses and coupled with the data from the UCI, the sepal lengths and widths can be ignored for further analysis. The remainder of the analysis will focus on the petal lengths and widths.
 
