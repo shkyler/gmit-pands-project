@@ -149,7 +149,22 @@ The resulting graph would look like this:
 Note that once the chart window is closed down, the program will ask the user if they would like to do more analysis. As before type 'yes' to continue or 'no' to quit.
 
 ## 4. Analysis of the Iris Data Set
-### 4.1 Results
+### 4.1 Analysis of the Data Set
+In this section of the project, the iris data set will be analysed using the irisanalyser.py software. The iris data set was originally collected by Edgar Anderson while studying the morphologic differences between the 3 iris species in the the data set. This analysis will focus on this and use this iris try to determine if it would be possible to classify any iris flower by species based on the the lengths and widths of the petals and sepals alone.
+
+#### 4.1.1 Mixed Species Histograms
+This initial analysis of the will create a mixed species histogram for each of the four data columns in the data set. This aims to determine the following:
+
+1. Is there a obvious grouping for each species?
+1. Are the groupings for each species distinct and well defined?
+1. Do the groupings for each species overlap?
+
+**_Sepal Length Mixed Species Histogram_**
+The mixed species hisogram for the sepal length is shown below:
+
+![histseplen](/img/histseplen.png)
+
+
 ### 4.2 Discussion
 
 ## References
