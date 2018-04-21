@@ -214,6 +214,16 @@ Based on this data it should be possible to classify data flowers based on there
 
 ![scatall](/img/scatall.png)
 
+The setosa data is distinct from the other two species but it is not clear how to classify versicolor or virginica data as they are not visually distinct from each other. For this reason the iris data set is not suited to cluster analysis.
+
+#### 4.1.3 Linear Discriminant Analysis and the Iris Data Set
+
+Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points on a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used i(ncluding the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varities of each data point in the new data set. An example of this is shown in the scatter plot below. 
+
+![scatlda](/img/scatlda.png)
+
+
+
 ### 4.2 Discussion
 
 ## References
@@ -237,4 +247,5 @@ Based on this data it should be possible to classify data flowers based on there
 1. [18] Practice Python. Rock Paper Scissors. (_https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html_)
 1. [19] UC Irvine Machine Learning Repository. Data Set Description. (_http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names_)
 1. [20] Wikipedia. Intraclass correlation. (_https://en.wikipedia.org/wiki/Intraclass_correlation_)
+1. [21] Quora. How does Linear Discriminant Analysis work in layman's terms? (_https://www.quora.com/How-does-Linear-Discriminant-Analysis-work-in-laymans-terms_)
 
