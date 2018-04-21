@@ -203,6 +203,11 @@ The class correlation co-efficient describes how stongly units in the same group
 
 Based on the the initial analyses and coupled with the data from the UCI, the sepal lengths and widths can be ignored for further analysis. The remainder of the analysis will focus on the petal lengths and widths.
 
+#### 4.1.2 Scatter Plots of the Data
+This section of the data will deal with a scatter plot of the iris flower petal data (i.e. Petal Length vs. Petal Width). The mixed species scatter plot is shown below.
+
+![scatpetlenwid](/img/scatpetlenwid.png)
+
 ### 4.2 Discussion
 
 ## References
