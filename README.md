@@ -175,6 +175,34 @@ The mixed species hisogram for the sepal width is shown below:
 
 As can be see from above there is not an obvious grouping for each of the 3 species. The setosa sepals are generally wider, but there is a lot of overlap between the species, particualrly between the versicolor and virginca species. It would make it dificult to determine an exact species based on the sepal widths of the flowers.
 
+**_Petal Length Mixed Species Histogram_**
+
+The mixed species hisogram for the petal length is shown below:
+
+![histpetlen](/img/histpetlen.png)
+
+As can be see from above there is definitely some distinction of the petal lenths between the 3 species. The setosa petals are shorter and do not overlap with the other two species of iris. There is a small amount of overlap between the versicolor and virginica species - however the petal lenth is definitely a useful charactersitic in the classification of the flower types.
+
+**_Petal Width Mixed Species Histogram_**
+
+The mixed species hisogram for the petal width is shown below:
+
+![histpetwid](/img/histpetwid.png)
+
+As can be see from above there is definitely some distinction of the petal widths between the 3 species. The setosa petals are narrower and do not overlap with the other two species of iris. There is a small amount of overlap between the versicolor and virginica species - however the petal width is definitely a useful charactersitic in the classification of the flower types.
+
+Based on the four histograms, the sepal lenghts and widths are not very useful in determining the class of a particular flower species. The petal lenghts and widths are much more distinct and therefore useful in the classification process. This can be corrobrated by some analysis of the data carried out by the UCI machine learning repository [19]. 
+
+This analysis calculates a 'class correlation co-efficient' for each of the 4 characterisitics. They list the results as follows:
+* Sepal Length - 0.7826
+* Sepal Width - -0.4194
+* Petal Length - 0.9490 (high!)
+* Petal Width - 0.9565 (high!)
+
+The class correlation co-efficient describes how stongly units in the same group resemble each other [20]. The higher the value to more related to each other items in the group are.
+
+Based on the the initial analyses and coupled with the data from the UCI, the sepal lengths and widths can be ignored for further analysis. The remainder of the analysis will focus on the petal lengths and widths.
+
 ### 4.2 Discussion
 
 ## References
@@ -196,4 +224,6 @@ As can be see from above there is not an obvious grouping for each of the 3 spec
 1. [16] Matplotlib. matplotlib.pyplot.hist (_https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html_)
 1. [17] Stack Overflow. python pylab plot normal distribution.(_https://stackoverflow.com/questions/10138085/python-pylab-plot-normal-distribution_)
 1. [18] Practice Python. Rock Paper Scissors. (_https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html_)
+1. [19] UC Irvine Machine Learning Repository. Data Set Description. (_http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names_)
+1. [20] Wikipedia. Intraclass correlation. (_https://en.wikipedia.org/wiki/Intraclass_correlation_)
 
