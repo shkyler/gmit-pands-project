@@ -160,11 +160,20 @@ This initial analysis of the will create a mixed species histogram for each of t
 1. Do the groupings for each species overlap?
 
 **_Sepal Length Mixed Species Histogram_**
+
 The mixed species hisogram for the sepal length is shown below:
 
 ![histseplen](/img/histseplen.png)
 
+As can be see from above there is not an obvious grouping for each of the 3 species. The setosa flowers are generally smaller, the versicolor somewhere in the middle and the viriginca flowers generally have longer sepal lengths, however there is a lot of overlap between the species, particualrly between the versicolor and virginca species. It would make it dificult to determine an exact species based on the sepal lengths of the flowers.
 
+**_Sepal Width Mixed Species Histogram_**
+
+The mixed species hisogram for the sepal length is shown below:
+
+![histsepwid](/img/histsepwid.png)
+
+As can be see from above there is not an obvious grouping for each of the 3 species. The setosa flowers are generally smaller, the versicolor somewhere in the middle and the viriginca flowers generally have longer sepal lengths, however there is a lot of overlap between the species, particualrly between the versicolor and virginca species. It would make it dificult to determine an exact species based on the sepal lengths of the flowers.
 ### 4.2 Discussion
 
 ## References
