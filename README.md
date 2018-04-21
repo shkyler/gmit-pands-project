@@ -20,7 +20,7 @@ The Iris data set is a set of data containing information about iris flowers. Th
 1. The petal width in cms
 1. The class (Iris Setosa, Iris Verticolour or Iris Virginica)
 
-The class represents the species of the iris flower and in the set there are 50 points for each of the 3 iris species. The data set is a multivariate data set as it involves data points with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edgar Anderson while working on a study of the physical differences between 3 related species of iris flower. Fisher used the data set as an example of _linear discriminate analysis_[9], and it is now commonly used as a typical test case in many statistical classification techniques (see section 2.3).
+The class represents the species of the iris flower and in the set there are 50 points for each of the 3 iris species. The data set is a multivariate data set as it involves data points with more than one measurement taken at a time [4]. It is commonly called "Fishers Iris Data Set" as it was published in the 1936 paper "_The use of multiple measurements in taxonomic problems_". It is also known as "Andersons Iris Data Set" as the data was originally collected by American botanist Edgar Anderson while working on a study of the physical differences between 3 related species of iris flower. Fisher used the data set as an example of _linear discriminant analysis_[9], and it is now commonly used as a typical test case in many statistical classification techniques (see section 2.3).
 
 ### 2.2 Edgar Anderson and Ronald Fisher
 ![Anderson](/img/Anderson.jpg)
@@ -218,13 +218,52 @@ The setosa data is distinct from the other two species but it is not clear how t
 
 #### 4.1.3 Linear Discriminant Analysis and the Iris Data Set
 
-Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points on a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used i(ncluding the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varities of each data point in the new data set. An example of this is shown in the scatter plot below. 
+Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points on a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used (including the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varities of each data point in the new data set. An example of how this might be done is shown in the scatter plot below. 
 
 ![scatlda](/img/scatlda.png)
 
+The LDA will provide line boundaries that would divide the areas between the clusters. _Note that the line boundaries shown above are for illustration only and have not been determined by LDA._ 
 
+### 4.2 Conclusions
+#### 4.2.1 Summary of the project
 
-### 4.2 Discussion
+The objectives of the project (adapted from the project brief) were as follows:
+
+1. Research background information about the iris data set and write a summary about it.
+1. Download the data set and write some Python code to investigate it.
+1. Summarise the data set by, for example, calculating the maximum, minimum and mean of each column of the data set. A Python script will quickly do this for you.
+1. Write a summary of your investigations.
+1. Include supporting tables and graphics as you deem necessary.
+1. Keep a list of references you used in completing the project.
+
+This README file has served as documentation for the project, and it can be seen that the projective objectives have been met. The project started with some internet research into the iris data set to discover where it came from, who collected it, where it is useful and why it is so popular in the teaching of data science. The data set was downloaded and a python program called irisanalyser.py was written to analyse of the data. The data set was analysed in accordance with the original pupose of the data (i.e. to classify iris flowers based on their physical characteristics). It was determined based on my analysis of the data (in conjuntion with some data from the UCI) that the petal dimensions are more important than the sepal dimensions when classifying iris flowers. It was shown that cluster analysis cannot be used to classify iris flowers, and it was shown that LDA is a method that could be used to take the data from this data set and use it to determine a classification set that could be used for other data sets. The graphical functiond from the irisanalyser.py program were very useful in illustrating these points.
+
+A full list of references was maintained throughout the project and this can be found at the end of this README file. 
+
+#### 4.2.2 Learning outcomes
+
+This project was a learning exercise to help develop programming skills from the Programming and Scripting module of a Data Analytics Post Graduate Diploma course. Therefore if would be expected that some skills would be developed in both programming and data science during the course of the project. Some of the programming skills that were developed include:
+
+1. Algorithms: The data summary algorthims were all developed as part of the project. These needed to be designed and thought through in order to summarize the data in the data set. These were all tested by comparing the results returned with the results provided by microsoft excel and found to be accurate.
+1. Software development: Prior to carrying out this project I had only written python scripts that were 20-30 lines long and generally carried out one function. This project enabled me to develop my skills in this area as I had to develop some small functions and use these to create bigger functions. I then had to create a user interface that allowed the user to call any of the functions without having to open the script and change the data in it. Regular commits on Github were also part of the learning experience.
+1. Filtering: As part of the project I had to learn how to filter columns in the data set based on some user input. This was achieved in practice by passing an argument to each function to allow it filter based on this value.
+1. Graphical Analysis: this was my first experience using the matplotlib library in the Python. There was extensive internet learning involved in getting these to plot nice graphs
+1. Output formatting: There was some lerning involved in the output formatting to create the nice, neat data summaries that the iris analyser can produce.
+1. Markdown: Documenting the project in the README file required me to learn how to produce nicely formatted files in markdown, a technology in which I had no prior experience.
+
+Learnings in the field of data science include:
+
+1. Cluster Analysis: the basics of cluster analysis were learned in order to determine when it might be suitable for data classification and when it might not be
+1. LDA: The basics principles of LDA are now understood without going into the detail on how to carry it out on a data set.
+1. Class correlation co-efficient: this principle is now understood and it was used during the analysis section of the project to determine which data might be useful in the analysis 
+
+#### 4.2.3 Areas for further work
+In order to scope and manage the project properly it was important that the body of work for the project was achievable in the five weeks available to carry out the project. It was therefore important that the project was scoped correctly. As this project is for the Programming and Scripting module - it was decided that most of the scope should be given to developing my skills in the areas of programming and software development during the course of this project. The main objective was to scope the project in such a way that it could be finished in the allowed timeframe while still meeting all of the project objectives. While I believe that I have met all of the objectives as set out by the project brief, I also believe that there are some areas for further work that could be developed in the future as my skillset during my progression through the Data Analytics H.DIP program.
+Some of these areas include:
+
+1. More in depth detail of some of data science concepts: As the course progresses, my understanding of the topics such as regression and LDA etc. will improve and it shouls be possible to add functions to look at this to the python program
+1. Expanding the iris analyser so it can be used for general data sets: currently the python script I wrote can really only be used for analsing the iris data set. There are certain items such as column headers hard coded into the data set, in future it could be possible to have the program import a data set and take all of these hard coded values from the imported file. 
+1. Greater use of built in python libraries: All the analysis functions were coded from scratch. A decision taken to improve my programming skills and algorithmic thinking. In future, existing libraries should be used where possible to reduce the time taken to develop software.
 
 ## References
 1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (_https://learnonline.gmit.ie/mod/url/view.php?id=199458_)
@@ -235,7 +274,7 @@ Linear Discriminant Analysis works by definining the boundaries around each of t
 1. [6] Edgar Anderson (1935). "_The irises of the Gaspé Peninsula_"
 1. [7] Famous Scientists. Ronald Fisher. (_https://www.famousscientists.org/ronald-fisher_)
 1. [8] Anders Hald (1998). (_A History of Mathematical Statistics._)
-1. [9] Linear Discriminate Analysis (LDA).(_http://people.revoledu.com/kardi/tutorial/LDA/LDA.htm_l)
+1. [9] Linear Discriminant Analysis (LDA).(_http://people.revoledu.com/kardi/tutorial/LDA/LDA.htm_l)
 1. [10] Stack Exchange. "What aspects of the “Iris” data set make it so successful as an example/teaching/test data set" (_https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching_)
 1. [11] Python Software Foundation. Welcome to Python. (_https://www.python.org/_)
 1. [12] Wikipedia. Standard Deviation. (_https://en.wikipedia.org/wiki/Standard_deviation_)
