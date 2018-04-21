@@ -204,9 +204,15 @@ The class correlation co-efficient describes how stongly units in the same group
 Based on the the initial analyses and coupled with the data from the UCI, the sepal lengths and widths can be ignored for further analysis. The remainder of the analysis will focus on the petal lengths and widths.
 
 #### 4.1.2 Scatter Plots of the Data
-This section of the data will deal with a scatter plot of the iris flower petal data (i.e. Petal Length vs. Petal Width). The mixed species scatter plot is shown below.
+This section of the analysis will deal with a scatter plot of the iris flower petal data (i.e. Petal Length vs. Petal Width). The mixed species scatter plot is shown below.
 
 ![scatpetlenwid](/img/scatpetlenwid.png)
+
+The scatter plot above shows that there is quite a good distincion between the 3 species. The setosa species is very well defined, while there is a small overlap between the virginica and versicolor varieties. 
+
+Based on this data it should be possible to classify data flowers based on there petal lengths and widths. Note that this analysis works mainly because the species data is already to hand. If the species data was not available, the scatter plot would look like this:
+
+![scatall](/img/scatall.png)
 
 ### 4.2 Discussion
 
