@@ -31,15 +31,17 @@ Edgar Anderson was an American botanist who lived in the early part of the 20th 
 
 ![Fisher](/img/Fisher.jpg)
 
+**_Ronald Fisher_**
+
 Ronald Fisher was a contemporary of Anderson. In addition to being probably the greatest statistician ever, he invented experimental design and was a principal founder of population genetics [7]. 
 In 1925, he released his book "_Statistical Methods for Research Workers_" which soon revolutionised both statistics and biology. In fact, he has been described as "_a genius who almost single-handedly created the foundations for modern statistical science_" [8].
 
 ### 2.3 The Purpose of Linear Discriminant Analysis (LDA) [9]
-The purpose of LDA is to classify objects into groups based on a set of features that describe the objects. In general, an object is placed into one of a number of predetermined groups based on the outcome of some obsertvations made on that object. In order to classify items properly the following must be decided:
+The purpose of LDA is to classify objects into groups based on a set of features that describe the objects. In general, an object is placed into one of a number of predetermined groups based on the outcome of some observations made on that object. In order to classify items properly the following must be decided:
 1. Which set of features best describes membership of each group?
 1. What model should be used to seperate the groups?
 
-Applying this description to the iris data set - the groups would be the 3 iris species (Iris Setosa, Iris Verticolour or Iris Virginica), the set of features would be the petal lenght, petal width, sepal lenght and sepal width. The linear discriminant model is one model that can be used to seperate the groups. 
+Applying this description to the iris data set - the groups would be the 3 iris species (Iris Setosa, Iris Versicolor or Iris Virginica), the set of features would be the petal length, petal width, sepal length and sepal width. The linear discriminant model is one model that can be used to seperate the groups. 
 
 Another method of classifying or grouping data points is _cluster analysis_. This method involves creating a scatter plot of data and then looking to see do any of the data points cluster together which may indicate membership of a particular group. With cluster analysis the groups are unknown at the start and would have to be determined by the analysis. The iris data set is generally not used in cluster analysis as there are only 2 groupings seen in the analysis. Futhermore it is not possible to seperate Iris Virginia from Iris Versicolour without having the species data in advance[2].
 
@@ -59,11 +61,11 @@ While carrying out research into the iris data set it quickly became apparent th
 ## 3. The Iris Analyser
 The Iris Analyser is a piece of software written in the Python [11] programming language which can be used to carry out analysis of the iris data set. The entire program was written as part of this project. This section of the README will look first at the code in the analyser and then explain how to run the program and use it analyse the iris data set.
 ### 3.1 Description of the code in irisanalyser.py
-The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read it has been split into four main sections using comments in the code. These will be explained one at a time.
+The irisanalyser.py script has over 300 lines of code in it, so to make it easier to read, it has been split into four main sections using comments in the code. These will be explained one at a time.
 #### 3.1.1 - Section 1 - Basic Statistical Functions
-In this section of the code, some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the numpy library, it was decided that it might be more challenging to try to create some of these functions from scratch as part of this research and learning exercise. These functions are as follows:
+In this section of the code, some functions that are used to calculate some basic statistics about the data are defined. While it is possible to use some of the built in functions in the "numpy" library, it was decided that it might be more challenging to try to create some of these functions from scratch as part of this research and learning exercise. These functions are as follows:
 
-_**count(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return a 'count' f the required data as specified by the arguments passed.
+_**count(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return a 'count' of the required data as specified by the arguments passed.
 
 _**sum(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return a 'sum' of the required data as specified by the arguments passed.
 
@@ -73,7 +75,7 @@ _**max(x,type):**_ This is a function that takes 2 arguments(x is an int, type i
 
 _**min(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return the minimum value of the required data as specified by the arguments passed. (note that this function calls the max() function to use as the initial value of the minimum - if 0 is used, none of the data values in the data set will be below it, so it will erroneously return 0 as the minimum)
 
-_**stddev(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return the standard deviation[12] of the required data as specified by the arguments passed. The algorithm was designed around the definitions on the wikipedia page.
+_**stddev(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return the standard deviation[12] of the required data as specified by the arguments passed. The algorithm was designed around the definitions on the Standard Deviation Wikipedia page.
 
 _**datacolumn(x,type):**_ This is a function that takes 2 arguments(x is an int, type is a string). It will then go through the data set looking at the column indexed by 'x'. The 'type' refers to the class of iris that is to be analysed. If type is 'all' it will look at the whole data set, otherwise one of the 3 iris species can be passed and it will only consider that particular species. The function will return an array containing the data values from the species and data column specified by the arguments - this function is useful for graphical analysis of the data.
 
@@ -91,7 +93,7 @@ _**summaryvirginica**_ is an array which contains the sum, maximum value, minimu
 _**printsummary(data)**_ is a function that takes one of the four data summaries as an argument and prints it to the colsole in a neatly formatted grid[13].
 
 #### 3.1.3 - Section 3 - Graphics
-In this section of the code, the functions for creating graphical plots of the data are defined. The matplotlib library [14] is used here. Functions are included for creating three different graph types. These are the scatter plot, the histogram and the normal distribtion. These functions are described below:
+In this section of the code, the functions for creating graphical plots of the data are defined. The matplotlib library [14] is used here. Functions are included for creating three different graph types. These are the scatter plot, the histogram and the normal distribution curve. These functions are described below:
 
 _**scatter(x,y,type):**_ This is a function that takes 3 arguments(x is an int,y is an int, type is a string). 'type' is representative of the species. Depending on the type entered, this function will create a scatter plot by calling the datacolumn() function for the columns specified by 'x' and 'y'.[15]
 
@@ -106,7 +108,7 @@ _**The Splash Screen**_ When the program is first run this is what is printed to
 
 _**help():**_ This is a very simple function that prints out a list of commands that can be accepted by the program, ordered by the various screens in the program. It can only be run from the splash screen and once it is run it will automatically start up a new analysis session.
 
-_**session():**_ THis is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this lesson was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() function will ask if more analysis is required. From here the user can either quit the program or start another session.
+_**session():**_ This is a function used to manage an analysis sesssion. It asks the user for the information that is used to decide what outputs are required. Note that all user inputs are controlled by using a while loop. If the user tries to enter invalid data - the while loop will keep asking until a valid input is entered(this lesson was learned when programming a Rock, Paper Scissors game [18]). Once the program has returned the data or graph as specified by the user, the session() function will ask if more analysis is required. From here the user can either quit the program or start another session.
 
 ### 3.2 Instructions for using the Iris Analyser
 #### 3.2.1 Cloning the repository
@@ -114,7 +116,7 @@ You can clone the following repository from Github by typing the following comma
 
 ```git clone https://github.com/shkyler/gmit-pands-project```
 
-In order for the program to run successfully, the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a directory called 'data', and this 'data' folder must be located in the same directory as the 'irisanalyser.py' script.
+In order for the program to run successfully, the iris data set must be stored in a file named 'iris.csv' with the columns arranged in the order as described in Section 2.1 of this README file. This .csv file must be stored in a directory called 'data', and this 'data' folder must be located in the same directory as the 'irisanalyser.py' script. Note that if you clone the respository from Github, all required files will be in the correct directories in the proper format.
 
 The program can be ran from any terminal window by using the 'cd' command to move into the same directory as the 'irisanalyser.py' script and running the following command:
 
@@ -123,7 +125,7 @@ The program can be ran from any terminal window by using the 'cd' command to mov
 **Note that the splash screen and data summaries are quite wide and in order for them to render correctly in the terminal, the terminal window should be full screen**   
 
 #### 3.2.2 Using the Iris Analyser
-Once the script has been down loaded and ran in a terminal window, you should see the following screen:
+Once the script has been downloaded and ran in a terminal window, you should see the following screen:
 ![Splash](/img/splash.png)
 
 Type 'no' to quit the program, 'yes' to progress, or 'help' to get some assistance regarding the commands used at various stages in the program. Note, that if the 'help' command is entered the program will automatically start once the help instructions have been printed. The help file looks like this:
@@ -155,19 +157,19 @@ Note that once the chart window is closed down, the program will ask the user if
 In this section of the project, the iris data set will be analysed using the irisanalyser.py software. The iris data set was originally collected by Edgar Anderson while studying the morphologic differences between the 3 iris species in the the data set. This analysis will focus on this and use this iris try to determine if it would be possible to classify any iris flower by species based on the the lengths and widths of the petals and sepals alone.
 
 #### 4.1.1 Mixed Species Histograms
-This initial analysis of the will create a mixed species histogram for each of the four data columns in the data set. This aims to determine the following:
+This initial analysis of the data will create a mixed species histogram for each of the four data columns in the data set. This aims to determine the following:
 
-1. Is there a obvious grouping for each species?
+1. Is there an obvious grouping for each species?
 1. Are the groupings for each species distinct and well defined?
 1. Do the groupings for each species overlap?
 
 **_Sepal Length Mixed Species Histogram_**
 
-The mixed species hisogram for the sepal length is shown below:
+The mixed species histogram for the sepal length is shown below:
 
 ![histseplen](/img/histseplen.png)
 
-As can be see from above there is not an obvious grouping for each of the 3 species. The setosa sepals are generally longer, the versicolor somewhere in the middle and the viriginca flowers generally have longer sepal lengths, however there is a lot of overlap between the species, particualrly between the versicolor and virginca species. It would make it dificult to determine an exact species based on the sepal lengths of the flowers.
+As can be see from above there is not an obvious grouping for each of the 3 species. The setosa sepals are generally shorter, the versicolor somewhere in the middle and the viriginca flowers generally have longer sepal lengths, however there is a lot of overlap between the species, particualrly between the versicolor and virginca species. It would make it dificult to determine an exact species based on the sepal lengths of the flowers.
 
 **_Sepal Width Mixed Species Histogram_**
 
@@ -183,7 +185,7 @@ The mixed species hisogram for the petal length is shown below:
 
 ![histpetlen](/img/histpetlen.png)
 
-As can be see from above there is definitely some distinction of the petal lenths between the 3 species. The setosa petals are shorter and do not overlap with the other two species of iris. There is a small amount of overlap between the versicolor and virginica species - however the petal lenth is definitely a useful charactersitic in the classification of the flower types.
+As can be see from above there is definitely some distinction of the petal lengths between the 3 species. The setosa petals are shorter and do not overlap with the other two species of iris. There is a small amount of overlap between the versicolor and virginica species - however the petal lenth is definitely a useful charactersitic in the classification of the flower types.
 
 **_Petal Width Mixed Species Histogram_**
 
@@ -193,7 +195,7 @@ The mixed species hisogram for the petal width is shown below:
 
 As can be see from above there is definitely some distinction of the petal widths between the 3 species. The setosa petals are narrower and do not overlap with the other two species of iris. There is a small amount of overlap between the versicolor and virginica species - however the petal width is definitely a useful charactersitic in the classification of the flower types.
 
-Based on the four histograms, the sepal lenghts and widths are not very useful in determining the class of a particular flower species. The petal lenghts and widths are much more distinct and therefore useful in the classification process. This can be corrobrated by some analysis of the data carried out by the UCI machine learning repository [19]. 
+Based on the four histograms, the sepal lengths and widths are not very useful in determining the class of a particular flower species. The petal lengths and widths are much more distinct and therefore useful in the classification process. This can be corrobrated by some analysis of the data carried out by the UCI machine learning repository [19]. 
 
 This analysis calculates a 'class correlation co-efficient' for each of the 4 characterisitics. They list the results as follows:
 * Sepal Length - 0.7826
@@ -212,7 +214,7 @@ This section of the analysis will deal with a scatter plot of the iris flower pe
 
 The scatter plot above shows that there is quite a good distincion between the 3 species. The setosa species is very well defined, while there is a small overlap between the virginica and versicolor varieties. 
 
-Based on this data it should be possible to classify data flowers based on there petal lengths and widths. Note that this analysis works mainly because the species data is already to hand. If the species data was not available, the scatter plot would look like this:
+Based on this data it should be possible to classify data flowers based on their petal lengths and widths. Note that this analysis works mainly because the species data is already to hand. If the species data was not available, the scatter plot would look like this:
 
 ![scatall](/img/scatall.png)
 
@@ -220,7 +222,7 @@ The setosa data is distinct from the other two species but it is not clear how t
 
 #### 4.1.3 Linear Discriminant Analysis and the Iris Data Set
 
-Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points on a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used (including the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varities of each data point in the new data set. An example of how this might be done is shown in the scatter plot below. 
+Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points onto a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used (including the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varieties of each data point in the new data set. An example of how this might be done is shown in the scatter plot below. 
 
 ![scatlda](/img/scatlda.png)
 
@@ -238,7 +240,7 @@ The objectives of the project (adapted from the project brief) were as follows:
 1. Include supporting tables and graphics as you deem necessary.
 1. Keep a list of references you used in completing the project.
 
-This README file has served as documentation for the project, and it can be seen that the projective objectives have been met. The project started with some internet research into the iris data set to discover where it came from, who collected it, where it is useful and why it is so popular in the teaching of data science. The data set was downloaded and a python program called irisanalyser.py was written to analyse of the data. The data set was analysed in accordance with the original pupose of the data (i.e. to classify iris flowers based on their physical characteristics). It was determined based on my analysis of the data (in conjuntion with some data from the UCI) that the petal dimensions are more important than the sepal dimensions when classifying iris flowers. It was shown that cluster analysis cannot be used to classify iris flowers, and it was shown that LDA is a method that could be used to take the data from this data set and use it to determine a classification set that could be used for other data sets. The graphical functiond from the irisanalyser.py program were very useful in illustrating these points.
+This README file has served as documentation for the project, and it can be seen that the project objectives have been met. The project started with some internet research into the iris data set to discover where it came from, who collected it, where it is useful and why it is so popular in the teaching of data science. The data set was downloaded and a python program called irisanalyser.py was written to analyse of the data. The data set was analysed in accordance with the original pupose of the data (i.e. to classify iris flowers based on their physical characteristics). It was determined based on my analysis of the data (in conjuntion with some data from the UCI) that the petal dimensions are more important than the sepal dimensions when classifying iris flowers. It was shown that cluster analysis cannot be used to classify iris flowers, and it was shown that LDA is a method that could be used to take the data from this data set and use it to determine a classification system that could be used for other data sets. The graphical functions from the irisanalyser.py program were very useful in illustrating these points.
 
 A full list of references was maintained throughout the project and this can be found at the end of this README file. 
 
@@ -246,25 +248,25 @@ A full list of references was maintained throughout the project and this can be 
 
 This project was a learning exercise to help develop programming skills from the Programming and Scripting module of a Data Analytics Post Graduate Diploma course. Therefore if would be expected that some skills would be developed in both programming and data science during the course of the project. Some of the programming skills that were developed include:
 
-1. Algorithms: The data summary algorthims were all developed as part of the project. These needed to be designed and thought through in order to summarize the data in the data set. These were all tested by comparing the results returned with the results provided by microsoft excel and found to be accurate.
-1. Software development: Prior to carrying out this project I had only written python scripts that were 20-30 lines long and generally carried out one function. This project enabled me to develop my skills in this area as I had to develop some small functions and use these to create bigger functions. I then had to create a user interface that allowed the user to call any of the functions without having to open the script and change the data in it. Regular commits on Github were also part of the learning experience.
+1. Algorithms: The data summary algorthims were all developed as part of the project. These needed to be designed and thought through in order to summarize the data in the data set. These were all tested by comparing the results returned with the results provided by Apple's 'Numbers' spreadsheet software and found to be accurate.
+1. Software development: Prior to carrying out this project I had only written python scripts that were 20-30 lines long and generally carried out one simple function. This project enabled me to develop my skills in this area as I had to develop some small functions and use these to create bigger functions. I then had to create a user interface that allowed the user to call any of the functions without having to open the script and change the data in it. Regular commits on Github were also part of the learning experience.
 1. Filtering: As part of the project I had to learn how to filter columns in the data set based on some user input. This was achieved in practice by passing an argument to each function to allow it filter based on this value.
 1. Graphical Analysis: this was my first experience using the matplotlib library in the Python. There was extensive internet learning involved in getting these to plot nice graphs
-1. Output formatting: There was some lerning involved in the output formatting to create the nice, neat data summaries that the iris analyser can produce.
+1. Output formatting: There was some learning involved in the output formatting to create the nice, neat data summaries that the iris analyser can produce.
 1. Markdown: Documenting the project in the README file required me to learn how to produce nicely formatted files in markdown, a technology in which I had no prior experience.
 
 Learnings in the field of data science include:
 
 1. Cluster Analysis: the basics of cluster analysis were learned in order to determine when it might be suitable for data classification and when it might not be
 1. LDA: The basics principles of LDA are now understood without going into the detail on how to carry it out on a data set.
-1. Class correlation co-efficient: this principle is now understood and it was used during the analysis section of the project to determine which data might be useful in the analysis 
+1. Class correlation co-efficient: this principle is now understood and it was used during the analysis section of the project to determine which data might be useful for the analysis and what data could be ignored.
 
 #### 4.2.3 Areas for further work
-In order to scope and manage the project properly it was important that the body of work for the project was achievable in the five weeks available to carry out the project. It was therefore important that the project was scoped correctly. As this project is for the Programming and Scripting module - it was decided that most of the scope should be given to developing my skills in the areas of programming and software development during the course of this project. The main objective was to scope the project in such a way that it could be finished in the allowed timeframe while still meeting all of the project objectives. While I believe that I have met all of the objectives as set out by the project brief, I also believe that there are some areas for further work that could be developed in the future as my skillset during my progression through the Data Analytics H.DIP program.
+In order to scope and manage the project properly it was important that the body of work for the project was achievable in the five weeks available to carry out the project. As this project is for the Programming and Scripting module - it was decided that most of the scope should be given to developing my skills in the areas of programming and software development during the course of this project. The main objective was to scope the project in such a way that it could be finished in the allowed timeframe while still meeting all of the project objectives. While I believe that I have met all of the objectives as set out by the project brief, I also believe that there are some areas for further work that could be developed in the future (as my skillset develops) during my progression through the Data Analytics H.DIP program.
 Some of these areas include:
 
-1. More in depth detail of some of data science concepts: As the course progresses, my understanding of the topics such as regression and LDA etc. will improve and it shouls be possible to add functions to look at this to the python program
-1. Expanding the iris analyser so it can be used for general data sets: currently the python script I wrote can really only be used for analsing the iris data set. There are certain items such as column headers hard coded into the data set, in future it could be possible to have the program import a data set and take all of these hard coded values from the imported file. 
+1. More in depth detail of some of data science concepts: As the course progresses, my understanding of the topics such as regression and LDA etc. will improve and it should be possible to add functions to look at this to the python program
+1. Expanding the iris analyser so it can be used for general data sets: currently the python script I wrote can really only be used for analsing the iris data set. There are certain items such as column headers hard coded into the data set, in future it could be possible to have the program import a data set and take all of these hard coded values from the imported file. Object-oriented programming might be usefule here.
 1. Greater use of built in python libraries: All the analysis functions were coded from scratch. A decision taken to improve my programming skills and algorithmic thinking. In future, existing libraries should be used where possible to reduce the time taken to develop software.
 
 ## References
