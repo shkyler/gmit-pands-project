@@ -141,7 +141,7 @@ def scatter(x,y,type):                                                          
     plt.scatter(datacolumn(x,'versicolor'),datacolumn(y,'versicolor'), c='blue', label = 'versicolor')
     plt.scatter(datacolumn(x,'virginica'),datacolumn(y,'virginica'), c='green', label = 'virginica')
   elif type == 'allsame':
-    plt.scatter(datacolumn(x,'all'),datacolumn(y,'all'), c='blue', label = 'all')                                     # if type is 'all' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured the same (blue)
+    plt.scatter(datacolumn(x,'all'),datacolumn(y,'all'), c='blue', label = 'all')                                     # if type is 'allsame' it will plot the corresponding x and y values by calling the datacolumn() function for all items - each set will be coloured the same (blue)
   plt.title(columnnames[y] + ' vs. ' + columnnames[x])                                                                # title will be given by looking up the 'columnnames' list
   plt.legend()
   plt.ylim([0,10])                                                                                                    # both x any y axes set in the range 0 to 10
@@ -203,7 +203,7 @@ def normdist(x,type):                                                           
   plt.show()
 
 # Section 4 - User Interface - In this section of the project a user interface will be created
-def session():                                                                                                                            # session() is a fuction used to interact with the user to select the parameters of the analysis session
+def session():                                                                                                                            # session() is a function used to interact with the user to select the parameters of the analysis session
   mode = input('Would you like a data summary or a graphical summary? (data/graph): ')                                                    # this block of code asks the user if they want graphical analysis or a data summary
   while mode not in ['data', 'graph']:
     mode = input('Please type either "data" or "graph": ')                                                                                # note all user inputs are validated using a while loop to prevent bad inputs

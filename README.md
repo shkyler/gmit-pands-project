@@ -272,7 +272,7 @@ Some of these areas include:
 ## References
 1. [1] Dr. Ian McLoughlin. GMIT. Instructions: Project 2018 (_https://learnonline.gmit.ie/mod/url/view.php?id=199458_)
 1. [2] Wikipedia. Iris flower data set (_https://en.wikipedia.org/wiki/Iris_flower_data_set_)
-1. [3] UC Irvine Machine Learning Repository. Iris plants database. )(_http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names_)
+1. [3] UC Irvine Machine Learning Repository. Iris plants database.(_http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names_)
 1. [4] Wikipedia. Multivariate statistics (_https://en.wikipedia.org/wiki/Multivariate_statistics_)
 1. [5] Wikipedia. Edgar Anderson (_https://en.wikipedia.org/wiki/Edgar_Anderson_)
 1. [6] Edgar Anderson (1935). "_The irises of the Gaspé Peninsula_"
