@@ -24,6 +24,7 @@ The class represents the species of the iris flower and in the set there are 50 
 
 ### 2.2 Edgar Anderson and Ronald Fisher
 ![Anderson](/img/Anderson.jpg)
+
 **_Edgar Anderson_**
 
 Edgar Anderson was an American botanist who lived in the early part of the 20th century[5]. In the 1920s, while working as assistant professor of botany at Washington University in St. Louis his main area of research centered around the development of techniques to quantify geographical  differences in the iris versicolor. In 1929 he obtained a fellowship to study at the John Innes Horticultural Institute in Britain, where he worked with Ronald Fisher. Anderson collected the iris data set himself and in fact "_two of the three species were collected in the Gaspé Peninsula, all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus_"[6].
