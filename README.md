@@ -156,7 +156,28 @@ Note that once the chart window is closed down, the program will ask the user if
 ### 4.1 Analysis of the Data Set
 In this section of the project, the iris data set will be analysed using the irisanalyser.py software. The iris data set was originally collected by Edgar Anderson while studying the morphologic differences between the 3 iris species in the the data set. This analysis will focus on this and use this iris try to determine if it would be possible to classify any iris flower by species based on the the lengths and widths of the petals and sepals alone.
 
-#### 4.1.1 Mixed Species Histograms
+#### 4.1.1 Data Summaries
+Using the data summary module we can produce a statistical summary for each column of the data set as follows:
+
+![dataall](/img/dataall.png)
+
+It is also possible to create a data summary for each species as follows:
+
+Setosa:
+
+![datasetosa](/img/datasetosa.png)
+
+Versicolor:
+
+![dataversicolor](/img/dataversicolor.png)
+
+Virginica:
+
+![datavirginica](/img/datavirginica.png)
+
+While summaries such as these are useful for determining hard facts about the data, they are not so good for drawing comparisons of the data. Graphical summaries are much better for this purpose and these will covered in the next section.
+
+#### 4.1.2 Mixed Species Histograms
 This initial analysis of the data will create a mixed species histogram for each of the four data columns in the data set. This aims to determine the following:
 
 1. Is there an obvious grouping for each species?
@@ -207,7 +228,7 @@ The class correlation co-efficient describes how stongly units in the same group
 
 Based on the the initial analyses and coupled with the data from the UCI, the sepal lengths and widths can be ignored for further analysis. The remainder of the analysis will focus on the petal lengths and widths.
 
-#### 4.1.2 Scatter Plots of the Data
+#### 4.1.3 Scatter Plots of the Data
 This section of the analysis will deal with a scatter plot of the iris flower petal data (i.e. Petal Length vs. Petal Width). The mixed species scatter plot is shown below.
 
 ![scatpetlenwid](/img/scatpetlenwid.png)
@@ -220,7 +241,7 @@ Based on this data it should be possible to classify data flowers based on their
 
 The setosa data is distinct from the other two species but it is not clear how to classify versicolor or virginica data as they are not visually distinct from each other. For this reason the iris data set is not suited to cluster analysis.
 
-#### 4.1.3 Linear Discriminant Analysis and the Iris Data Set
+#### 4.1.4 Linear Discriminant Analysis and the Iris Data Set
 
 Linear Discriminant Analysis works by definining the boundaries around each of the clusters [21]. It projects the data points onto a line so that the clusters are as seperated as possible. In the case of the iris data set, the data available could be used (including the class information) to determine the lines which best describe the boundaries between the iris varieties on the scatter plot. These lines or boundaries could then be used on other unclassified data sets to help determine the varieties of each data point in the new data set. An example of how this might be done is shown in the scatter plot below. 
 
