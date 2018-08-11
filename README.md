@@ -7,7 +7,7 @@ The objective of this project is to carryout some research into "Fishers Iris Da
 1. Research background information about the data set and write a summary about it.
 1. Keep a list of references you used in completing the project.
 1. Download the data set and write some Python code to investigate it.
-1. Summarise the data set by, for example, calculating the maximum, minimum and mean of each column of the data set. A Python script will quickly do this for you.
+1. Summarise the data set by, for example, calculating the maximum, minimum and mean of each column of the data set. A Python script will quickly do this for you.1
 1. Write a summary of your investigations.
 1. Include supporting tables and graphics as you deem necessary.
 
